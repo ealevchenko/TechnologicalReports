@@ -5,6 +5,10 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUI", "WebUI\WebUI.csproj", "{BA78D4F6-6DE9-42D2-B513-6AB8D2411479}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFBF9", "TReports\EFBF9\EFBF9.csproj", "{F3D4028C-6FAA-4744-92F2-0FFA41F53DE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLogs", "TReports\MLogs\MLogs.csproj", "{8F256CD8-5A1C-466D-9874-639EC4FADB0F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{BA78D4F6-6DE9-42D2-B513-6AB8D2411479}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA78D4F6-6DE9-42D2-B513-6AB8D2411479}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA78D4F6-6DE9-42D2-B513-6AB8D2411479}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3D4028C-6FAA-4744-92F2-0FFA41F53DE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3D4028C-6FAA-4744-92F2-0FFA41F53DE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3D4028C-6FAA-4744-92F2-0FFA41F53DE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3D4028C-6FAA-4744-92F2-0FFA41F53DE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F256CD8-5A1C-466D-9874-639EC4FADB0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F256CD8-5A1C-466D-9874-639EC4FADB0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F256CD8-5A1C-466D-9874-639EC4FADB0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F256CD8-5A1C-466D-9874-639EC4FADB0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
