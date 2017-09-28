@@ -1,0 +1,3 @@
+[submodule "TReports"]
+	path = TReports
+	url = http://krr-app-bbgit01/TReports.git
