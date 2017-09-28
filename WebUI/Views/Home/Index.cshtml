@@ -1,0 +1,104 @@
+﻿@using WebUI.App_LocalResources;
+@{
+    Layout = null;
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @Styles.Render("~/Home/css")
+    @*<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow&v1' rel='stylesheet' type='text/css' />
+        <link href='http://fonts.googleapis.com/css?family=Wire+One&v1' rel='stylesheet' type='text/css' />*@
+</head>
+<body>
+    <div class="container">
+        <h1>@GlobalResource.index_name_webside<span>&nbsp;@GlobalResource.index_name_tehrep</span></h1>
+
+        @*</div>*@
+        <ul id="sti-menu" class="sti-menu">
+
+            <li data-hovercolor="#ff395e">
+                <a href="#">
+                    <h2 data-type="mText" class="sti-item">@GlobalResource.index_menu_name_cto</h2>
+                    <h3 data-type="sText" class="sti-item">@GlobalResource.index_menu_name_cto_full</h3>
+                    <span data-type="icon" class="sti-icon sti-icon-scto sti-item"></span>
+                </a>
+            </li>
+            <li data-hovercolor="#0094FF">
+                <a href='@Url.Action("Add","Home")'>
+                    <h2 data-type="mText" class="sti-item">@GlobalResource.index_menu_name_add</h2>
+                    <h3 data-type="sText" class="sti-item">@GlobalResource.index_menu_name_add_full</h3>
+                    <span data-type="icon" class="sti-icon sti-icon-add sti-item"></span>
+                </a>
+            </li>
+            <li data-hovercolor="#ffdd3f">
+                <a href="#">
+                    <h2 data-type="mText" class="sti-item">@GlobalResource.index_menu_name_sd</h2>
+                    <h3 data-type="sText" class="sti-item">@GlobalResource.index_menu_name_sd_full</h3>
+                    <span data-type="icon" class="sti-icon sti-icon-sd sti-item"></span>
+                </a>
+            </li>
+            <li data-hovercolor="#57e676">
+                <a href="#">
+                    <h2 data-type="mText" class="sti-item">@GlobalResource.index_menu_name_rd</h2>
+                    <h3 data-type="sText" class="sti-item">@GlobalResource.index_menu_name_rd_full</h3>
+                    <span data-type="icon" class="sti-icon sti-icon-rd sti-item"></span>
+                </a>
+            </li>
+            <li data-hovercolor="#d869b2">
+                <a href="#">
+                    <h2 data-type="mText" class="sti-item">@GlobalResource.index_menu_name_ed</h2>
+                    <h3 data-type="sText" class="sti-item">@GlobalResource.index_menu_name_ed_full</h3>
+                    <span data-type="icon" class="sti-icon sti-icon-ed sti-item"></span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="more">
+            <ul>
+
+                <li>@GlobalResource.index_mmenu_title</li>
+                <li class="selected"><a href="#">@GlobalResource.index_link_go_help_title</a></li>
+                <li><a href="#">@GlobalResource.index_link_go_access_title</a></li>
+                <li><a href="#">@GlobalResource.index_link_go_admin_title</a></li>
+                <li><a href="#">@GlobalResource.index_link_go_about_title</a></li>
+
+            </ul>
+        </div>
+        <div class="language">
+                @using (Html.BeginForm("ChangeCulture", "Home"))
+                {
+                    @GlobalResource.index_select_lang_title
+                    <select length="9" id="countries" name="lang" onchange="$('form').submit();">
+                        <option value="ru" @(System.Threading.Thread.CurrentThread.CurrentCulture.Name == "ru-RU" ? "selected" : "")>@GlobalResource.index_select_lang_ru</option>
+                        <option value="en" @(System.Threading.Thread.CurrentThread.CurrentCulture.Name == "en-US" ? "selected" : "")>@GlobalResource.index_select_lang_en</option>
+                        <option value="uk" @(System.Threading.Thread.CurrentThread.CurrentCulture.Name == "uk-UA" ? "selected" : "")>@GlobalResource.index_select_lang_uk</option>
+                    </select>
+                }
+            </div>
+        </div>
+        <div class="footer">
+            <a href="#"><span> &copy; @DateTime.Now.Year</span> &bull; @GlobalResource.name_developers_section_full</a>
+            <span class="right_ab">
+                <a href="mailto:Eduard.Levchenko@arcelormittal.com"><strong>@GlobalResource.name_developers_admin</strong></a>
+            </span>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jquery-ui")
+    @Styles.Render("~/jquery-ui/css")
+    @Scripts.Render("~/bundles/easing")
+    @Scripts.Render("~/bundles/iconmenu")
+
+    <script type="text/javascript">
+        $(function () {
+            $('#sti-menu').iconmenu();
+        });
+    </script>
+</body>
+</html>

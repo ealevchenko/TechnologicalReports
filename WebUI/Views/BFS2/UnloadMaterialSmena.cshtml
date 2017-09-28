@@ -1,0 +1,50 @@
+﻿@using WebUI.App_LocalResources;
+
+@{
+    AjaxOptions ajaxOpts = new AjaxOptions
+    {
+        OnSuccess = "selectPeriod",
+        //LoadingElementId = "loading",
+        LoadingElementDuration = 1000,
+        OnBegin = "OnBegin",
+        OnFailure = "OnFailure",
+        OnComplete = "OnComplete"
+    };
+    ViewBag.Title = @BF9UnloadMaterialResource.report_title;
+    ViewBag.Section = @BF9UnloadMaterialResource.report_section;
+    ViewBag.URL = "../Images/layout-report/dp.jpg";
+    ViewBag.HierarchyMenu = "ADD;BFS2;BFS2Unload";
+    Layout = "~/Views/Shared/_LayoutReport.cshtml";
+}
+@Scripts.Render("~/bundles/Ajax")
+@Scripts.Render("~/bundles/jqueryval")
+<script src="~/Scripts/jquery.cookie.js"></script>
+<div id="report" class="report-wide">
+    <div id="header">
+        <div class="title">@ViewBag.Title</div>
+        @Styles.Render("~/datetime/css")
+        @Scripts.Render("~/bundles/datetime")
+        @using (Ajax.BeginForm("ReportUnloadMaterialSmena", "BFS2", ajaxOpts, new { @id = "fmList" })) //
+        {
+            <div id="select-rangedatetime">
+                <button type="button" id="button-previous">@GlobalResource.button_title_previous</button>
+                @Html.Label(@GlobalResource.select_date_title)
+                    <span id="select-range">
+                        <input id="date" name="date" size="20" value='@ViewBag.dt'>
+                    </span>
+                <button type="button" id="button-next">@GlobalResource.button_title_next</button>
+            </div>
+        }
+    </div>
+    <link rel="stylesheet" type="text/css" href="~/Content/reports/bfs2/unloadmaterial.css">
+    @*<div id="loading" class="load" style="display: none">
+        <p>Loading Data...</p>
+    </div>*@
+    <div id="content">
+        @{ Html.RenderAction("ReportUnloadMaterialSmena", "BFS2", new { date = @DateTime.Parse(@ViewBag.dt) }); }
+    </div>
+    <div id="cls">
+
+    </div>
+</div>
+<script src="~/Scripts/reports/bfs2/unloadmaterial.js"></script>

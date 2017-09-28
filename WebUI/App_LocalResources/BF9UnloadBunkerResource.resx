@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="control_mode_mass" xml:space="preserve">
+    <value>по массе</value>
+  </data>
+  <data name="control_mode_time" xml:space="preserve">
+    <value>по времени</value>
+  </data>
+  <data name="mode_auto" xml:space="preserve">
+    <value>А</value>
+  </data>
+  <data name="mode_auto_full" xml:space="preserve">
+    <value>Автоматический режим</value>
+  </data>
+  <data name="mode_remote" xml:space="preserve">
+    <value>Д</value>
+  </data>
+  <data name="mode_remote_full" xml:space="preserve">
+    <value>Дистанционный режим</value>
+  </data>
+  <data name="report_title" xml:space="preserve">
+    <value>Протокол загрузки БЗУ ДП-9.</value>
+  </data>
+  <data name="report_ub_field_bunker" xml:space="preserve">
+    <value>Бункер :</value>
+  </data>
+  <data name="report_ub_field_dateandtime" xml:space="preserve">
+    <value>Дата и время :</value>
+  </data>
+  <data name="report_ub_field_factzagr" xml:space="preserve">
+    <value>Факт\Загр</value>
+  </data>
+  <data name="report_ub_field_lotok" xml:space="preserve">
+    <value>Лоток :</value>
+  </data>
+  <data name="report_ub_field_material" xml:space="preserve">
+    <value>Материал:</value>
+  </data>
+  <data name="report_ub_field_mode" xml:space="preserve">
+    <value>Режим  :</value>
+  </data>
+  <data name="report_ub_field_modeupr" xml:space="preserve">
+    <value>Режим управления :</value>
+  </data>
+  <data name="report_ub_field_num_porc" xml:space="preserve">
+    <value>Номер порции :</value>
+  </data>
+  <data name="report_ub_field_otklonenie" xml:space="preserve">
+    <value>Отклонение :</value>
+  </data>
+  <data name="report_ub_field_p1" xml:space="preserve">
+    <value>П1</value>
+  </data>
+  <data name="report_ub_field_p10" xml:space="preserve">
+    <value>П10</value>
+  </data>
+  <data name="report_ub_field_p10_11" xml:space="preserve">
+    <value>П10-11</value>
+  </data>
+  <data name="report_ub_field_p11" xml:space="preserve">
+    <value>П11</value>
+  </data>
+  <data name="report_ub_field_p11_" xml:space="preserve">
+    <value>П11-</value>
+  </data>
+  <data name="report_ub_field_p1_2" xml:space="preserve">
+    <value>П1-2</value>
+  </data>
+  <data name="report_ub_field_p2" xml:space="preserve">
+    <value>П2</value>
+  </data>
+  <data name="report_ub_field_p2_3" xml:space="preserve">
+    <value>П2-3</value>
+  </data>
+  <data name="report_ub_field_p3" xml:space="preserve">
+    <value>П3</value>
+  </data>
+  <data name="report_ub_field_p3_4" xml:space="preserve">
+    <value>П3-4</value>
+  </data>
+  <data name="report_ub_field_p4" xml:space="preserve">
+    <value>П4</value>
+  </data>
+  <data name="report_ub_field_p4_5" xml:space="preserve">
+    <value>П4-5</value>
+  </data>
+  <data name="report_ub_field_p5" xml:space="preserve">
+    <value>П5</value>
+  </data>
+  <data name="report_ub_field_p5_6" xml:space="preserve">
+    <value>П5-6</value>
+  </data>
+  <data name="report_ub_field_p6" xml:space="preserve">
+    <value>П6</value>
+  </data>
+  <data name="report_ub_field_p6_7" xml:space="preserve">
+    <value>П6-7</value>
+  </data>
+  <data name="report_ub_field_p7" xml:space="preserve">
+    <value>П7</value>
+  </data>
+  <data name="report_ub_field_p7_8" xml:space="preserve">
+    <value>П7-8</value>
+  </data>
+  <data name="report_ub_field_p8" xml:space="preserve">
+    <value>П8</value>
+  </data>
+  <data name="report_ub_field_p8_9" xml:space="preserve">
+    <value>П8-9</value>
+  </data>
+  <data name="report_ub_field_p9" xml:space="preserve">
+    <value>П9</value>
+  </data>
+  <data name="report_ub_field_p9_10" xml:space="preserve">
+    <value>П9-10</value>
+  </data>
+  <data name="report_ub_field_raschet" xml:space="preserve">
+    <value>Расчетное</value>
+  </data>
+  <data name="report_ub_field_s1" xml:space="preserve">
+    <value>С1</value>
+  </data>
+  <data name="report_ub_field_s2" xml:space="preserve">
+    <value>С2</value>
+  </data>
+  <data name="report_ub_field_s3" xml:space="preserve">
+    <value>С3</value>
+  </data>
+  <data name="report_ub_field_s4" xml:space="preserve">
+    <value>С4</value>
+  </data>
+  <data name="report_ub_field_s5" xml:space="preserve">
+    <value>С5</value>
+  </data>
+  <data name="report_ub_field_s6" xml:space="preserve">
+    <value>С6</value>
+  </data>
+  <data name="report_ub_field_timeunload" xml:space="preserve">
+    <value>Время выгрузки:</value>
+  </data>
+  <data name="report_ub_field_ugolotkr" xml:space="preserve">
+    <value>Угол открытия:</value>
+  </data>
+  <data name="report_ub_field_unload" xml:space="preserve">
+    <value>Выгружено :</value>
+  </data>
+  <data name="report_ub_field_zadanie" xml:space="preserve">
+    <value>Задание :</value>
+  </data>
+  <data name="report_ub_field_zonds" xml:space="preserve">
+    <value>Зонды</value>
+  </data>
+</root>

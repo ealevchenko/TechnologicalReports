@@ -1,0 +1,152 @@
+﻿/*div {
+    border: 1px solid red;
+}*/
+
+.content {
+    width:auto
+}
+
+.report-wide {
+    margin-right: auto;
+    margin-left: auto;
+    width: 1500px;
+}
+
+div.title-bunker {
+
+}
+
+table.title-bunker {
+    font-size:18px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.title-bunker th {
+    background:#808080;
+    color:#f3f1f1;
+}
+
+.title-bunker td {
+    background:#f3f1f1;
+    color:#4800ff;
+    font-weight:800;
+}
+
+
+div.item-bunker-1 {
+    border: 2px solid #0026ff;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+
+div.item-bunker-1 div#info-unloadbunker{
+background: #aebcff;
+}
+
+div.item-bunker-2 {
+    border: 2px solid #00ff21;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+
+div.item-bunker-2 div#info-unloadbunker{
+background: #d2f5d9;
+}
+
+div#info-unloadbunker {
+    width: 250px;
+    float: left;
+    /*background: #f3f1f1;*/
+}
+
+div#sector-unloadbunker {
+    width: 250px;
+    float: left;
+}
+
+div#positions-unloadbunker {
+    width: auto;
+    float: left;
+}
+
+th#positions {
+    background: #f3f1f1;
+    color: #808080;
+    width:35px;
+    text-align:center;
+}
+
+th#sector {
+    background: #d1ebeb;
+    color: #808080;
+    width:40px;
+    text-align:center;
+}
+
+th#between {
+    background: #d0cbcb;
+    color: #f3f1f1;
+    width:35px;
+    text-align:center;
+}
+th {
+    text-align:right;
+}
+
+td {
+    text-align:center;
+}
+
+td#positions {
+    background: #f3f1f1;
+}
+
+td#sector {
+    background: #f3f1f1;
+}
+
+td#between {
+    background: #d0cbcb;
+}
+
+.unload {
+    color:#0026ff;
+    font-weight:800;
+}
+
+.zadanie {
+    color:#ff0000;
+    font-weight:800;
+}
+
+.lotok {
+    color:#ff6a00;
+    font-weight:800;
+}
+
+div#info-unloadbunker {
+    border-right: 2px dotted green;
+}
+
+div#positions-unloadbunker {
+    border-left: 2px dotted green;
+}
+
+div.title-bunker {
+    border-bottom: 2px dotted green;
+}
+
+label.errorMsg {color: red; background:#f3f1f1;}
+
+/*div.date-start  {           
+    position:absolute;
+    left:700px;
+    width:150px;
+}
+div.date-stop  {           
+    position:absolute;
+    left:900px;
+    width:150px;
+}*/
+
+.invalidElem {border: 1px solid red}

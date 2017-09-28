@@ -1,0 +1,16 @@
+﻿@using WebUI.App_LocalResources;
+
+@{
+    ViewBag.Title = "Отчеты АДД";
+    ViewBag.Section = "АДД, ДЦ-2";
+    ViewBag.URL = "../Images/layout-report/dp.jpg";
+    ViewBag.HierarchyMenu = "ADD";
+    Layout = "~/Views/Shared/_LayoutReportMenu.cshtml";
+}
+
+<ul class="bmenu">
+    <li>@Html.ActionLink(@GlobalResource.report_group_unload, "BFS2Unload", "Home")</li>
+    <li>@Html.ActionLink(@GlobalResource.report_group_energy, "BFS2Energy", "Home")</li>
+    <li>@Html.ActionLink(@GlobalResource.report_group_psi, "BFS2PSI", "Home")</li>
+    <li>@Html.ActionLink(@GlobalResource.report_group_tehno, "BFS2Technology", "Home")</li>
+</ul>

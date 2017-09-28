@@ -1,0 +1,35 @@
+﻿@using EFBF9.DataSet;
+
+@model List<IGrouping<string, UnloadMaterialSmena>>
+
+<table class="table-unloadmaterial">
+    <tr>
+        <th class="name-field">Материал</th>
+        <th class="name-field">Смена Д</th>
+        <th class="name-field">Смена Н</th>
+        <th class="name-field">Сутки</th>
+        <th class="name-field">Месяц</th>
+    </tr>
+    @foreach (IGrouping<string, UnloadMaterialSmena> groupitem in Model)
+    {
+        <tr><th colspan="5" class="type-material">@groupitem.Key</th></tr>
+        foreach (UnloadMaterialSmena item in @groupitem)
+        {
+            <tr>
+                <th class="material">@item.Material</th>
+                <td class="ves-material">@(String.Format("{0:0.00}", @item.Shift1))</td>
+                <td class="ves-material">@(String.Format("{0:0.00}", @item.Shift2))</td>
+                <td class="ves-material">@(String.Format("{0:0.00}", @item.day))</td>
+                <td class="ves-material">@(String.Format("{0:0.00}", @item.Month))</td>
+            </tr>
+
+        }
+        <tr class="foot">
+            <th class="itogo-material"></th>
+            <td class="itogo-ves-material">@(String.Format("{0:0.00}", @groupitem.Sum(s => s.Shift1)))</td>
+            <td class="itogo-ves-material">@(String.Format("{0:0.00}", @groupitem.Sum(s => s.Shift2)))</td>
+            <td class="itogo-ves-material">@(String.Format("{0:0.00}", @groupitem.Sum(s => s.day)))</td>
+            <td class="itogo-ves-material">@(String.Format("{0:0.00}", @groupitem.Sum(s => s.Month)))</td>
+        </tr>
+    }
+</table>

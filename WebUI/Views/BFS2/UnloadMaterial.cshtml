@@ -1,0 +1,39 @@
+﻿@using WebUI.App_LocalResources;
+
+@{
+    AjaxOptions ajaxOpts = new AjaxOptions
+    {
+        OnSuccess = "selectPeriod"
+    };
+    ViewBag.Title = "Отчет по выгрузке материалов ШП ДП-9";
+    ViewBag.Section = "ДЦ-2, ДП-9";
+    ViewBag.URL = "../Images/layout-report/dp.jpg";
+    ViewBag.HierarchyMenu = "ADD;BFS2;BFS2Unload";
+    Layout = "~/Views/Shared/_LayoutReport.cshtml";
+}
+@Scripts.Render("~/bundles/Ajax")
+<div id="report" class="report-wide">
+    <div id="header">
+        <div class="title">@ViewBag.Title</div>
+        @Styles.Render("~/datetime/css")
+        @Scripts.Render("~/bundles/datetime")
+        @using (Ajax.BeginForm("ListSostav", "MTApproaches", ajaxOpts, new { @id = "fmList" })) //
+        {
+            <div id="select-rangedatetime">
+                @Html.Label(@GlobalResource.select_date_range_title)
+                <span id="select-range">
+                    <input id="date-start" name="date_start" size="20" value='@ViewBag.dt_start' type="datetime"> до
+                    <input id="date-stop" name="date_stop" size="20" value='@ViewBag.dt_stop' type="datetime">
+                </span>
+            </div>
+            <button type="submit">@GlobalResource.button_title_view</button>
+        }
+    </div>
+    <div id="content">
+
+    </div>
+    <div id="cls">
+
+    </div>
+</div>
+<script src="~/Scripts/reports/bfs2/UnloadMaterial.js"></script>

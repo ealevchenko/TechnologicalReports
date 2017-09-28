@@ -1,0 +1,383 @@
+﻿@using WebUI.Helpers;
+@using WebUI.App_LocalResources;
+@using EFBF9.DataSet;
+
+@model IEnumerable<UnloadBunker>
+
+    @foreach (var item in Model)
+    {
+
+        <div class='item-bunker-@item.Бункер.ToString()'>
+            <div class="title-bunker">
+                <table>
+                    <tr>
+                        <th>@Html.Label(@BF9UnloadBunkerResource.report_ub_field_num_porc)</th>
+                        <td>@item.Номер_порции</td>
+                        <th>@Html.Label(@BF9UnloadBunkerResource.report_ub_field_dateandtime)</th>
+                        <td>@item.Дата_и_время</td>
+                        <th>@Html.Label(@BF9UnloadBunkerResource.report_ub_field_bunker)</th>
+                        <td>@item.Бункер</td>
+                        <th>@Html.Label(@BF9UnloadBunkerResource.report_ub_field_otklonenie)</th>
+                        <td>@item.Точность_рассыпания</td>
+                        <th>@Html.Label(@BF9UnloadBunkerResource.report_ub_field_modeupr)</th>
+                        <td>@Html.GetControlMode((int)@item.Управление_по_массе_при_высыпании)</td>
+                        <td>@Html.GetUnloadMode((UnloadBunker)@item)</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="info-unloadbunker">
+                <table><tr><th>Вес</th><td>@(String.Format("{0:0.00}", @item.Масса))</td></tr></table>
+                <table>
+                    <tr><th></th><th>@BF9UnloadBunkerResource.report_ub_field_raschet</th><th>@BF9UnloadBunkerResource.report_ub_field_factzagr</th></tr>
+                    <tr><th>@BF9UnloadBunkerResource.report_ub_field_material</th><td>@item.Материал</td><td>@item.Материал_по_факту</td></tr>
+                    <tr><th>@BF9UnloadBunkerResource.report_ub_field_ugolotkr</th><td>@item.Угол_открытия_ШЗ_расчетный</td><td>@item.Угол_открытия_ШЗ_фактический</td></tr>
+                    <tr><th>@BF9UnloadBunkerResource.report_ub_field_timeunload</th><td>@item.Скорость_выгрузки_расчетная</td><td>@item.Скорость_выгрузки_фактическая</td></tr>
+                </table>
+            </div>
+            <div id="sector-unloadbunker">
+                <table id="table-sector">
+                    <tr>
+                        <th id="sector">@BF9UnloadBunkerResource.report_ub_field_s1</th>
+                        <th id="sector">@BF9UnloadBunkerResource.report_ub_field_s2</th>
+                        <th id="sector">@BF9UnloadBunkerResource.report_ub_field_s3</th>
+                        <th id="sector">@BF9UnloadBunkerResource.report_ub_field_s4</th>
+                        <th id="sector">@BF9UnloadBunkerResource.report_ub_field_s5</th>
+                        <th id="sector">@BF9UnloadBunkerResource.report_ub_field_s6</th>
+                    </tr>
+                    <tr>
+                        <td id="sector" class="unload">
+                            @if (@item.Выгружено_в_сектор_1 > 0)
+                        { @(String.Format("{0:0.00}", @item.Выгружено_в_сектор_1)) }
+                        </td>
+                        <td id="sector" class="unload">
+                            @if (@item.Выгружено_в_сектор_2 > 0)
+                        { @(String.Format("{0:0.00}", @item.Выгружено_в_сектор_2)) }
+                        </td>
+                        <td id="sector" class="unload">
+                            @if (@item.Выгружено_в_сектор_3 > 0)
+                        { @(String.Format("{0:0.00}", @item.Выгружено_в_сектор_3)) }
+                        </td>
+                        <td id="sector" class="unload">
+                            @if (@item.Выгружено_в_сектор_4 > 0)
+                        { @(String.Format("{0:0.00}", @item.Выгружено_в_сектор_4)) }
+                        </td>
+                        <td id="sector" class="unload">
+                            @if (@item.Выгружено_в_сектор_5 > 0)
+                        { @(String.Format("{0:0.00}", @item.Выгружено_в_сектор_5)) }
+                        </td>
+                        <td id="sector" class="unload">
+                            @if (@item.Выгружено_в_сектор_6 > 0)
+                        { @(String.Format("{0:0.00}", @item.Выгружено_в_сектор_6)) }
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">@BF9UnloadBunkerResource.report_ub_field_zonds (@item.Задание_уровень_засыпи)</th>
+                        <td>@item.Нижнее_положение_зонд_1</td>
+                        <td>@item.Нижнее_положение_зонд_2</td>
+                        <td>@item.Нижнее_положение_зонд_3</td>
+                        <td>@item.Нижнее_положение_зонд_4</td>
+                    </tr>
+                </table>
+                <table>
+                    <tr></tr>
+                </table>
+            </div>
+            <div id="positions-unloadbunker">
+                <table id="table-positions">
+                    <tr>
+                        <th>Позиции:</th>
+                        <th id="positions">@BF9UnloadBunkerResource.report_ub_field_p1</th>
+                        <th id="between">@BF9UnloadBunkerResource.report_ub_field_p1_2</th>
+                        <th id="positions">@BF9UnloadBunkerResource.report_ub_field_p2</th>
+                        <th id="between">@BF9UnloadBunkerResource.report_ub_field_p2_3</th>
+                        <th id="positions">@BF9UnloadBunkerResource.report_ub_field_p3</th>
+                        <th id="between">@BF9UnloadBunkerResource.report_ub_field_p3_4</th>
+                        <th id="positions">@BF9UnloadBunkerResource.report_ub_field_p4</th>
+                        <th id="between">@BF9UnloadBunkerResource.report_ub_field_p4_5</th>
+                        <th id="positions">@BF9UnloadBunkerResource.report_ub_field_p5</th>
+                        <th id="between">@BF9UnloadBunkerResource.report_ub_field_p5_6</th>
+                        <th id="positions">@BF9UnloadBunkerResource.report_ub_field_p6</th>
+                        <th id="between">@BF9UnloadBunkerResource.report_ub_field_p6_7</th>
+                        <th id="positions">@BF9UnloadBunkerResource.report_ub_field_p7</th>
+                        <th id="between">@BF9UnloadBunkerResource.report_ub_field_p7_8</th>
+                        <th id="positions">@BF9UnloadBunkerResource.report_ub_field_p8</th>
+                        <th id="between">@BF9UnloadBunkerResource.report_ub_field_p8_9</th>
+                        <th id="positions">@BF9UnloadBunkerResource.report_ub_field_p9</th>
+                        <th id="between">@BF9UnloadBunkerResource.report_ub_field_p9_10</th>
+                        <th id="positions">@BF9UnloadBunkerResource.report_ub_field_p10</th>
+                        <th id="between">@BF9UnloadBunkerResource.report_ub_field_p10_11</th>
+                        <th id="positions">@BF9UnloadBunkerResource.report_ub_field_p11</th>
+                        <th id="between">@BF9UnloadBunkerResource.report_ub_field_p11_</th>
+                    </tr>
+                    <tr>
+                        <th>@BF9UnloadBunkerResource.report_ub_field_zadanie</th>
+                        <td id="positions" class="zadanie">
+                            @if (@item.Задание_на_позицию_1 > 0)
+                        { @(String.Format("{0:0.00}", @item.Задание_на_позицию_1)) }
+                        </td>
+                        <td id="between"></td>
+                        <td id="positions" class="zadanie">
+                            @if (@item.Задание_на_позицию_2 > 0)
+                        { @(String.Format("{0:0.00}", @item.Задание_на_позицию_2)) }
+                        </td>
+                        <td id="between"></td>
+                        <td id="positions" class="zadanie">
+                            @if (@item.Задание_на_позицию_3 > 0)
+                        { @(String.Format("{0:0.00}", @item.Задание_на_позицию_3)) }
+                        </td>
+                        <td id="between"></td>
+                        <td id="positions" class="zadanie">
+                            @if (@item.Задание_на_позицию_4 > 0)
+                        { @(String.Format("{0:0.00}", @item.Задание_на_позицию_4)) }
+                        </td>
+                        <td id="between"></td>
+                        <td id="positions" class="zadanie">
+                            @if (@item.Задание_на_позицию_5 > 0)
+                        { @(String.Format("{0:0.00}", @item.Задание_на_позицию_5)) }
+                        </td>
+                        <td id="between"></td>
+                        <td id="positions" class="zadanie">
+                            @if (@item.Задание_на_позицию_6 > 0)
+                        { @(String.Format("{0:0.00}", @item.Задание_на_позицию_6))  }
+                        </td>
+                        <td id="between"></td>
+                        <td id="positions" class="zadanie">
+                            @if (@item.Задание_на_позицию_7 > 0)
+                        { @(String.Format("{0:0.00}", @item.Задание_на_позицию_7)) }
+                        </td>
+                        <td id="between"></td>
+                        <td id="positions" class="zadanie">
+                            @if (@item.Задание_на_позицию_8 > 0)
+                        { @(String.Format("{0:0.00}", @item.Задание_на_позицию_8)) }
+                        </td>
+                        <td id="between"></td>
+                        <td id="positions" class="zadanie">
+                            @if (@item.Задание_на_позицию_9 > 0)
+                        { @(String.Format("{0:0.00}", @item.Задание_на_позицию_9)) }
+                        </td>
+                        <td id="between"></td>
+                        <td id="positions" class="zadanie">
+                            @if (@item.Задание_на_позицию_10 > 0)
+                        { @(String.Format("{0:0.00}", @item.Задание_на_позицию_10)) }
+                        </td>
+                        <td id="between"></td>
+                        <td id="positions" class="zadanie">
+                            @if (@item.Задание_на_позицию_11 > 0)
+                        { @(String.Format("{0:0.00}", @item.Задание_на_позицию_11)) }
+                        </td>
+                        <td id="between"></td>
+                    </tr>
+                    <tr>
+                        <th rowspan="2">@BF9UnloadBunkerResource.report_ub_field_unload</th>
+                        <td id="positions" class="unload">
+                            @if (@item.Выгружено_в_позицию_1 > 0)
+                        { @(String.Format("{0:0.00}", @item.Выгружено_в_позицию_1)) }
+                        </td>
+                        <td id="between"></td>
+                        <td id="positions" class="unload">
+                            @if (@item.Выгружено_в_позицию_2 > 0)
+                        { @(String.Format("{0:0.00}", @item.Выгружено_в_позицию_2)) }
+                        </td>
+                        <td id="between"></td>
+                        <td id="positions" class="unload">
+                            @if (@item.Выгружено_в_позицию_3 > 0)
+                        { @(String.Format("{0:0.00}", @item.Выгружено_в_позицию_3)) }
+                        </td>
+                        <td id="between"></td>
+                        <td id="positions" class="unload">
+                            @if (@item.Выгружено_в_позицию_4 > 0)
+                        { @(String.Format("{0:0.00}", @item.Выгружено_в_позицию_4)) }
+                        </td>
+                        <td id="between"></td>
+                        <td id="positions" class="unload">
+                            @if (@item.Выгружено_в_позицию_5 > 0)
+                        { @(String.Format("{0:0.00}", @item.Выгружено_в_позицию_5)) }
+                        </td>
+                        <td id="between"></td>
+                        <td id="positions" class="unload">
+                            @if (@item.Выгружено_в_позицию_6 > 0)
+                        { @(String.Format("{0:0.00}", @item.Выгружено_в_позицию_6)) }
+                        </td>
+                        <td id="between"></td>
+                        <td id="positions" class="unload">
+                            @if (@item.Выгружено_в_позицию_7 > 0)
+                        { @(String.Format("{0:0.00}", @item.Выгружено_в_позицию_7)) }
+                        </td>
+                        <td id="between"></td>
+                        <td id="positions" class="unload">
+                            @if (@item.Выгружено_в_позицию_8 > 0)
+                        { @(String.Format("{0:0.00}", @item.Выгружено_в_позицию_8)) }
+                        </td>
+                        <td id="between"></td>
+                        <td id="positions" class="unload">
+                            @if (@item.Выгружено_в_позицию_9 > 0)
+                        { @(String.Format("{0:0.00}", @item.Выгружено_в_позицию_9)) }
+                        </td>
+                        <td id="between"></td>
+                        <td id="positions" class="unload">
+                            @if (@item.Выгружено_в_позицию_10 > 0)
+                        { @(String.Format("{0:0.00}", @item.Выгружено_в_позицию_10)) }
+                        </td>
+                        <td id="between"></td>
+                        <td id="positions" class="unload">
+                            @if (@item.Выгружено_в_позицию_11 > 0)
+                        { @(String.Format("{0:0.00}", @item.Выгружено_в_позицию_11)) }
+                        </td>
+                        <td id="between"></td>
+                    </tr>
+                    <tr>
+                        <td id="positions"></td>
+                        <td id="between" class="unload">
+                            @if (@item.Выгружено_между_позициями_1_2 > 0)
+                        { @(String.Format("{0:0.00}", @item.Выгружено_между_позициями_1_2)) }
+                        </td>
+                        <td id="positions"></td>
+                        <td id="between" class="unload">
+                            @if (@item.Выгружено_между_позициями_2_3 > 0)
+                        { @(String.Format("{0:0.00}", @item.Выгружено_между_позициями_2_3)) }
+                        </td>
+                        <td id="positions"></td>
+                        <td id="between" class="unload">
+                            @if (@item.Выгружено_между_позициями_3_4 > 0)
+                        { @(String.Format("{0:0.00}", @item.Выгружено_между_позициями_3_4)) }
+                        </td>
+                        <td id="positions"></td>
+                        <td id="between" class="unload">
+                            @if (@item.Выгружено_между_позициями_4_5 > 0)
+                        { @(String.Format("{0:0.00}", @item.Выгружено_между_позициями_4_5)) }
+                        </td>
+                        <td id="positions"></td>
+                        <td id="between" class="unload">
+                            @if (@item.Выгружено_между_позициями_5_6 > 0)
+                        { @(String.Format("{0:0.00}", @item.Выгружено_между_позициями_5_6))}
+                        </td>
+                        <td id="positions"></td>
+                        <td id="between" class="unload">
+                            @if (@item.Выгружено_между_позициями_6_7 > 0)
+                        { @(String.Format("{0:0.00}", @item.Выгружено_между_позициями_6_7))}
+                        </td>
+                        <td id="positions"></td>
+                        <td id="between" class="unload">
+                            @if (@item.Выгружено_между_позициями_7_8 > 0)
+                        { @(String.Format("{0:0.00}", @item.Выгружено_между_позициями_7_8))}
+                        </td>
+                        <td id="positions"></td>
+                        <td id="between" class="unload">
+                            @if (@item.Выгружено_между_позициями_8_9 > 0)
+                        { @(String.Format("{0:0.00}", @item.Выгружено_между_позициями_8_9))}
+                        </td>
+                        <td id="positions"></td>
+                        <td id="between" class="unload">
+                            @if (@item.Выгружено_между_позициями_9_10 > 0)
+                        { @(String.Format("{0:0.00}", @item.Выгружено_между_позициями_9_10))}
+                        </td>
+                        <td id="positions"></td>
+                        <td id="between" class="unload">
+                            @if (@item.Выгружено_между_позициями_10_11 > 0)
+                        { @(String.Format("{0:0.00}", @item.Выгружено_между_позициями_10_11))}
+                        </td>
+                        <td id="positions"></td>
+                        <td id="between" class="unload">
+                            @if (@item.Выгружено_после_позиции_11 > 0)
+                        { @(String.Format("{0:0.00}", @item.Выгружено_после_позиции_11)) }
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>@BF9UnloadBunkerResource.report_ub_field_lotok@item.Число_импульсов_на_перевод_лотка@("(имп)")</th>
+                        <td id="positions" class="lotok">
+                            @Html.GetUgolLotka((UnloadBunker)@item, 1)
+                        </td>
+                        <td id="between"></td>
+                        <td id="positions" class="lotok">
+                            @Html.GetUgolLotka((UnloadBunker)@item, 2)
+                        </td>
+                        <td id="between"></td>
+                        <td id="positions" class="lotok">
+                            @Html.GetUgolLotka((UnloadBunker)@item, 3)
+                        </td>
+                        <td id="between"></td>
+                        <td id="positions" class="lotok">
+                            @Html.GetUgolLotka((UnloadBunker)@item, 4)
+                        </td>
+                        <td id="between"></td>
+                        <td id="positions" class="lotok">
+                            @Html.GetUgolLotka((UnloadBunker)@item, 5)
+                        </td>
+                        <td id="between"></td>
+                        <td id="positions" class="lotok">
+                            @Html.GetUgolLotka((UnloadBunker)@item, 6)
+                        </td>
+                        <td id="between"></td>
+                        <td id="positions" class="lotok">
+                            @Html.GetUgolLotka((UnloadBunker)@item, 7)
+                        </td>
+                        <td id="between"></td>
+                        <td id="positions" class="lotok">
+                            @Html.GetUgolLotka((UnloadBunker)@item, 8)
+                        </td>
+                        <td id="between"></td>
+                        <td id="positions" class="lotok">
+                            @Html.GetUgolLotka((UnloadBunker)@item, 9)
+                        </td>
+                        <td id="between"></td>
+                        <td id="positions" class="lotok">
+                            @Html.GetUgolLotka((UnloadBunker)@item, 10)
+                        </td>
+                        <td id="between"></td>
+                        <td id="positions" class="lotok">
+                            @Html.GetUgolLotka((UnloadBunker)@item, 11)
+                        </td>
+                        <td id="between"></td>
+                    </tr>
+                    @*<tr>
+                            <th>Режим:</th>
+                            <td id="positions" class="mode">
+                                @Html.GetMode((int)@item.Дистанция_при_переводе_лотка_на_угол_1)
+                            </td>
+                            <td id="between"></td>
+                            <td id="positions" class="mode">
+                                @Html.GetMode((int)@item.Дистанция_при_переводе_лотка_на_угол_2)
+                            </td>
+                            <td id="between"></td>
+                            <td id="positions" class="mode">
+                                @Html.GetMode((int)@item.Дистанция_при_переводе_лотка_на_угол_3)
+                            </td>
+                            <td id="between"></td>
+                            <td id="positions" class="mode">
+                                @Html.GetMode((int)@item.Дистанция_при_переводе_лотка_на_угол_4)
+                            </td>
+                            <td id="between"></td>
+                            <td id="positions" class="mode">
+                                @Html.GetMode((int)@item.Дистанция_при_переводе_лотка_на_угол_5)
+                            </td>
+                            <td id="between"></td>
+                            <td id="positions" class="mode">
+                                @Html.GetMode((int)@item.Дистанция_при_переводе_лотка_на_угол_6)
+                            </td>
+                            <td id="between"></td>
+                            <td id="positions" class="mode">
+                                @Html.GetMode((int)@item.Дистанция_при_переводе_лотка_на_угол_7)
+                            </td>
+                            <td id="between"></td>
+                            <td id="positions" class="mode">
+                                @Html.GetMode((int)@item.Дистанция_при_переводе_лотка_на_угол_8)
+                            </td>
+                            <td id="between"></td>
+                            <td id="positions" class="mode">
+                                @Html.GetMode((int)@item.Дистанция_при_переводе_лотка_на_угол_9)
+                            </td>
+                            <td id="between"></td>
+                            <td id="positions" class="mode">
+                                @Html.GetMode((int)@item.Дистанция_при_переводе_лотка_на_угол_10)
+                            </td>
+                            <td id="between"></td>
+                            <td id="positions" class="mode">
+                                @Html.GetMode((int)@item.Дистанция_при_переводе_лотка_на_угол_11)
+                            </td>
+                            <td id="between"></td>
+                        </tr>*@
+                </table>
+            </div>
+            <div class="clr"></div>
+        </div>
+    }

@@ -1,0 +1,11 @@
+﻿@using WebUI.Helpers;
+@model String
+
+@*<ol class="hierarchy-menu">*@
+    @foreach (var item in @Model.Split(';'))
+    {
+         @*<li>*@
+        @Html.ActionLink("-> " + @Html.GetActionMenuTitle((string)item).ToString(), (string)item, "Home")
+        @*</li>*@
+    }
+@*</ol>*@
