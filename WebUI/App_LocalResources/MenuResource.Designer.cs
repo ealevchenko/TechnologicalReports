@@ -88,6 +88,15 @@ namespace WebUI.App_LocalResources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Энергоресурсы.
+        /// </summary>
+        public static string BFS2Energy {
+            get {
+                return ResourceManager.GetString("BFS2Energy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Загрузка.
         /// </summary>
         public static string BFS2Unload {

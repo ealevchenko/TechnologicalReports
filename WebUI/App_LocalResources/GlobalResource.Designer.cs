@@ -61,6 +61,78 @@ namespace WebUI.App_LocalResources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на АДД.
+        /// </summary>
+        public static string add_section {
+            get {
+                return ResourceManager.GetString("add_section", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Отчеты АДД.
+        /// </summary>
+        public static string add_title {
+            get {
+                return ResourceManager.GetString("add_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на АДД, ДЦ-2.
+        /// </summary>
+        public static string bfs2_section {
+            get {
+                return ResourceManager.GetString("bfs2_section", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Отчеты ДЦ-2.
+        /// </summary>
+        public static string bfs2_title {
+            get {
+                return ResourceManager.GetString("bfs2_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Энергоресурсы ДЦ-2.
+        /// </summary>
+        public static string bfs2energy_section {
+            get {
+                return ResourceManager.GetString("bfs2energy_section", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Отчеты потреблению энергоресурсов ДЦ-2.
+        /// </summary>
+        public static string bfs2energy_title {
+            get {
+                return ResourceManager.GetString("bfs2energy_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Загрузка ДЦ-2.
+        /// </summary>
+        public static string bfs2unload_section {
+            get {
+                return ResourceManager.GetString("bfs2unload_section", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Отчеты по загрузке ДЦ-2.
+        /// </summary>
+        public static string bfs2unload_title {
+            get {
+                return ResourceManager.GetString("bfs2unload_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Следующая дата.
         /// </summary>
         public static string button_title_next {
@@ -426,6 +498,15 @@ namespace WebUI.App_LocalResources {
         public static string name_developers_section_full {
             get {
                 return ResourceManager.GetString("name_developers_section_full", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Отчет потребления энергоресурсов.
+        /// </summary>
+        public static string report_bf9_energy {
+            get {
+                return ResourceManager.GetString("report_bf9_energy", resourceCulture);
             }
         }
         

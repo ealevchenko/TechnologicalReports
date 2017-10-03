@@ -2,11 +2,13 @@
 using EFBF9.Concrete;
 using EFBF9.DataSet;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Web;
 using System.Web.Mvc;
+using TReport.TData;
 
 namespace WebUI.Controllers.BFS2
 {
@@ -78,5 +80,6 @@ namespace WebUI.Controllers.BFS2
             return PartialView(group);
         }
         #endregion
+
     }
 }

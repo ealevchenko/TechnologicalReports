@@ -126,6 +126,9 @@
   <data name="BFS2" xml:space="preserve">
     <value>ДЦ-2</value>
   </data>
+  <data name="BFS2Energy" xml:space="preserve">
+    <value>Энергоресурсы</value>
+  </data>
   <data name="BFS2Unload" xml:space="preserve">
     <value>Загрузка</value>
   </data>

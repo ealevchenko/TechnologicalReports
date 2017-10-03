@@ -40,6 +40,14 @@ namespace WebUI.Controllers
         {
             return View();
         }
+        /// <summary>
+        /// Меню энергоресурсы
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult BFS2Energy()
+        {
+            return View();
+        }
         #endregion
 
         public ActionResult About()
