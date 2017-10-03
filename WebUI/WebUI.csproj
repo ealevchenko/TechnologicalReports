@@ -139,6 +139,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BF9UnloadBunkerResource.resx</DependentUpon>
     </Compile>
+    <Compile Include="App_LocalResources\EnergySutkiResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnergySutkiResource.resx</DependentUpon>
+    </Compile>
     <Compile Include="App_LocalResources\BF9UnloadMaterialResource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -163,6 +168,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BFS2\BFS2Controller.cs" />
+    <Compile Include="Controllers\Energy\EnergyController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -193,6 +199,7 @@
     <Content Include="Content\lockpanel\lockpanel.css" />
     <Content Include="Content\reports\bfs2\unloadbunker.css" />
     <Content Include="Content\reports\bfs2\unloadmaterial.css" />
+    <Content Include="Content\reports\energy\energy.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -236,6 +243,7 @@
     <Content Include="Scripts\lockpanel\lockpanel.js" />
     <Content Include="Scripts\reports\bfs2\unloadbunker.js" />
     <Content Include="Scripts\reports\bfs2\unloadmaterial.js" />
+    <Content Include="Scripts\reports\energy\energy.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
@@ -271,6 +279,11 @@
     <Content Include="Views\BFS2\UnloadMaterialSmena.cshtml" />
     <Content Include="Views\BFS2\ReportUnloadMaterialSmena.cshtml" />
     <Content Include="SetupDB.config" />
+    <Content Include="Views\EnergyDay\ReportEnergyDay.cshtml" />
+    <Content Include="Views\Home\BFS2Energy.cshtml" />
+    <Content Include="Views\EnergyDay\BFS2.cshtml" />
+    <Content Include="Views\EnergyDay\ADD.cshtml" />
+    <Content Include="Views\EnergyDay\EnergyDay.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -285,6 +298,10 @@
     <EmbeddedResource Include="App_LocalResources\BF9UnloadBunkerResource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>BF9UnloadBunkerResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\EnergySutkiResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EnergySutkiResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="App_LocalResources\BF9UnloadMaterialResource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -304,9 +321,21 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TReports\EFBF7\EFBF7.csproj">
+      <Project>{f03f33e8-a200-422c-97c1-9798d68a9bf9}</Project>
+      <Name>EFBF7</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TReports\EFBF8\EFBF8.csproj">
+      <Project>{b795339d-8870-49e6-bd42-060066a795d5}</Project>
+      <Name>EFBF8</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TReports\EFBF9\EFBF9.csproj">
       <Project>{f3d4028c-6faa-4744-92f2-0ffa41f53de2}</Project>
       <Name>EFBF9</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TReports\TReport\TReport.csproj">
+      <Project>{d0f02229-8ed5-42ea-8378-23ac9402d60c}</Project>
+      <Name>TReport</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

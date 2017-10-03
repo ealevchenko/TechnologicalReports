@@ -1,0 +1,50 @@
+﻿@using WebUI.App_LocalResources;
+
+@{
+    AjaxOptions ajaxOpts = new AjaxOptions
+    {
+        OnSuccess = "selectPeriod",
+        LoadingElementDuration = 1000,
+        OnBegin = "OnBegin",
+        OnFailure = "OnFailure",
+        OnComplete = "OnComplete"
+    };
+}
+
+@{
+    TReport.TData.trObj[] obj = @ViewBag.obj;
+}
+
+@Scripts.Render("~/bundles/Ajax")
+@Scripts.Render("~/bundles/jqueryval")
+<script src="~/Scripts/jquery.cookie.js"></script>
+<div id="report" class="report-wide">
+    <div id="header">
+        <div class="title">@ViewBag.Title</div>
+        @Styles.Render("~/datetime/css")
+        @Scripts.Render("~/bundles/datetime")
+        @using (Ajax.BeginForm("ReportEnergyDay", "EnergyDay", ajaxOpts, new { @id = "fmList" })) //
+        {
+            <div id="select-rangedatetime">
+                <button type="button" id="button-previous">@GlobalResource.button_title_previous</button>
+                @Html.Label(@GlobalResource.select_date_title)
+                <span id="select-range">
+                    <input id="date" name="date" size="20" value='@ViewBag.dt'>
+                    @foreach (TReport.TData.trObj ob in obj.ToList())
+                    {
+                        <input name="obj" id="obj" type="hidden" value='@ob.ToString()'>
+                    }
+                </span>
+                <button type="button" id="button-next">@GlobalResource.button_title_next</button>
+            </div>
+        }
+    </div>
+    <link rel="stylesheet" type="text/css" href="~/Content/reports/energy/energy.css">
+    <div id="content">
+        @{ Html.RenderAction("ReportEnergyDay", "EnergyDay", new { date = @DateTime.Parse(@ViewBag.dt), obj = @ViewBag.obj }); }
+    </div>
+    <div id="cls">
+
+    </div>
+</div>
+<script src="~/Scripts/reports/energy/energy.js"></script>

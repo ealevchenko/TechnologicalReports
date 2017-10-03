@@ -16,3 +16,4 @@
 /// <reference path="reports/bfs2/unloadbunker.js" />
 /// <reference path="lockpanel/lockpanel.js" />
 /// <reference path="jquery.cookie.js" />
+/// <reference path="reports/energy/energy.js" />

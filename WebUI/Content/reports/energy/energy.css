@@ -1,0 +1,64 @@
+﻿.content {
+    width:auto
+}
+
+.report-wide {
+    margin-right: auto;
+    margin-left: auto;
+    width: 1500px;
+}
+
+table.table-unloadmaterial {
+    font-size:16px;
+    /*font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;*/
+    border:1px solid #808080;
+}
+
+th.name-field{
+    background:#808080;
+    color:#ffffff;
+    font-weight:600;
+    text-transform:uppercase;
+}
+
+th.type-material {
+    background:#dcd6d6;
+    color:#4d4949;
+    text-align:center;
+    font-weight:400;
+}
+
+th.material {
+    background:#dcd6d6;
+    color:#4d4949;
+    text-align:right;
+    text-transform:uppercase;
+    font-weight:200;
+}
+
+td.ves-material {
+    border:1px solid #808080;
+    text-align:center;
+    color:#0094ff;
+    font-weight:400;
+}
+
+td.itogo-ves-material {
+    border:1px solid #808080;
+    background:#808080;
+    text-align:center;
+    color:#ffffff;
+    font-weight:600;
+    margin-bottom:5px;
+}
+tr.foot {
+    padding-bottom:10px;
+}
+
+div.errorMsg {color: red; 
+              position:fixed;
+              left:700px;
+}
+
+.invalidElem {border: 1px solid red}
+ 
