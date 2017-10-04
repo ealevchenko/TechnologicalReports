@@ -50,6 +50,60 @@ namespace WebUI.Controllers
         }
         #endregion
 
+        #region ЭД
+        /// <summary>
+        /// Меню ЭД
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult ED()
+        {
+            return View();
+        }
+        #endregion
+
+        #region СТО
+        /// <summary>
+        /// Меню СТО
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult CTO()
+        {
+            return View();
+        }
+        /// <summary>
+        /// Меню управления энергоэффективности
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult UPEE()
+        {
+            return View();
+        }
+        /// <summary>
+        /// Меню энергоресурсы
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult UPEEEnergy()
+        {
+            return View();
+        }
+
+        public ActionResult DATP()
+        {
+            return View();
+        }
+
+        public ActionResult DATPUG()
+        {
+            return View();
+        }
+
+        public ActionResult UGEnergy()
+        {
+            return View();
+        }
+
+        #endregion
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

@@ -132,4 +132,25 @@
   <data name="BFS2Unload" xml:space="preserve">
     <value>Загрузка</value>
   </data>
+  <data name="CTO" xml:space="preserve">
+    <value>CTO</value>
+  </data>
+  <data name="DATP" xml:space="preserve">
+    <value>ДАТП</value>
+  </data>
+  <data name="DATPUG" xml:space="preserve">
+    <value>УГ</value>
+  </data>
+  <data name="ED" xml:space="preserve">
+    <value>ЭД</value>
+  </data>
+  <data name="UGEnergy" xml:space="preserve">
+    <value>Энергоресурсы</value>
+  </data>
+  <data name="UPEE" xml:space="preserve">
+    <value>УЭЭ</value>
+  </data>
+  <data name="UPEEEnergy" xml:space="preserve">
+    <value>Энергоресурсы</value>
+  </data>
 </root>

@@ -15,21 +15,21 @@
             foreach (TReport.TREntities.TREnergy.EnergyValueObjEntity ei in typeitem.list_energy) { 
                 <tr>
                     <th>@typeitem.name</th>
-                    <th>@ei.obj</th>
-                    <th>@ei.flow.Unit @ei.flow.Multiplier</th>
-                    <td>@ei.flow.Value</td>
-                    <td>@ei.avg_temp.Value</td>
-                    <td>@ei.avg_temp.Unit</td>
-                    <td>@ei.avg_pressure.Value</td>
-                    <td>@ei.avg_pressure.Unit</td>
-                    <td>@ei.planimetric.Value</td>
-                    <td>@ei.planimetric.Unit</td>
-                    <td>@ei.pr_flow.Value</td>
-                    <td>@ei.pr_flow.Unit</td>
-                    <td>@ei.time_norm.Value</td>
-                    <td>@ei.time_norm.Unit</td>
-                    <td>@ei.time_max.Value</td>
-                    <td>@ei.time_max.Unit</td>
+                    <th>@ei.Object</th>
+                    <th>@ei.flow.GetUnitMultiplier()</th>
+                    <td>@ei.flow.GetValue("n3")</td>
+                    <td>@ei.avg_temp.GetValue("n2")</td>
+                    <td>@ei.avg_temp.GetUnitMultiplier()</td>
+                    <td>@ei.avg_pressure.GetValue("n2")</td>
+                    <td>@ei.avg_pressure.GetUnitMultiplier()</td>
+                    <td>@ei.planimetric.GetValue("0.####")</td>
+                    <td>@ei.planimetric.GetUnitMultiplier()</td>
+                    <td>@ei.pr_flow.GetValue("n3")</td>
+                    <td>@ei.pr_flow.GetUnitMultiplier()</td>
+                    <td>@ei.time_norm.GetValue("n0")</td>
+                    <td>@ei.time_norm.GetUnitMultiplier()</td>
+                    <td>@ei.time_max.GetValue("n0")</td>
+                    <td>@ei.time_max.GetUnitMultiplier()</td>
                 </tr>
             }
         }

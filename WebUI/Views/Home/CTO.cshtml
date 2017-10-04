@@ -1,0 +1,15 @@
+﻿@using WebUI.App_LocalResources;
+
+@{
+    ViewBag.Title = @GlobalResource.cto_title;
+    ViewBag.Section = @GlobalResource.cto_section;
+    ViewBag.URL = "../Images/layout-report/work.jpg";
+    ViewBag.ReturnAction = "";
+    ViewBag.HierarchyMenu = null;
+    Layout = "~/Views/Shared/_LayoutReportMenu.cshtml";
+}
+
+<ul class="bmenu">
+    <li>@Html.ActionLink(@GlobalResource.menu_report_cto_datp_full, "DATP", "Home")</li>
+    <li>@Html.ActionLink(@GlobalResource.menu_report_cto_upee_full, "UPEE", "Home")</li>
+</ul>

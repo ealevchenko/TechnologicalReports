@@ -160,6 +160,78 @@ namespace WebUI.App_LocalResources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на CTO.
+        /// </summary>
+        public static string cto_section {
+            get {
+                return ResourceManager.GetString("cto_section", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Отчеты CTO.
+        /// </summary>
+        public static string cto_title {
+            get {
+                return ResourceManager.GetString("cto_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на CTO, ДАТП.
+        /// </summary>
+        public static string datp_section {
+            get {
+                return ResourceManager.GetString("datp_section", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Отчеты ДАТП.
+        /// </summary>
+        public static string datp_title {
+            get {
+                return ResourceManager.GetString("datp_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на ДАТП, УГ.
+        /// </summary>
+        public static string datpug_section {
+            get {
+                return ResourceManager.GetString("datpug_section", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Отчеты УГ ДАТП.
+        /// </summary>
+        public static string datpug_title {
+            get {
+                return ResourceManager.GetString("datpug_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на ЭД.
+        /// </summary>
+        public static string ed_section {
+            get {
+                return ResourceManager.GetString("ed_section", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Отчеты ЭД.
+        /// </summary>
+        public static string ed_title {
+            get {
+                return ResourceManager.GetString("ed_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на О нас.
         /// </summary>
         public static string index_link_go_about_title {
@@ -475,6 +547,60 @@ namespace WebUI.App_LocalResources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на ДАТП.
+        /// </summary>
+        public static string menu_report_cto_datp {
+            get {
+                return ResourceManager.GetString("menu_report_cto_datp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Департамент автоматизации технологических процессов.
+        /// </summary>
+        public static string menu_report_cto_datp_full {
+            get {
+                return ResourceManager.GetString("menu_report_cto_datp_full", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на УГ ДАТП.
+        /// </summary>
+        public static string menu_report_cto_datp_ug {
+            get {
+                return ResourceManager.GetString("menu_report_cto_datp_ug", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Учетная группа.
+        /// </summary>
+        public static string menu_report_cto_datp_ug_full {
+            get {
+                return ResourceManager.GetString("menu_report_cto_datp_ug_full", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на УЭЭ.
+        /// </summary>
+        public static string menu_report_cto_upee {
+            get {
+                return ResourceManager.GetString("menu_report_cto_upee", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Управление по энергоэффективности.
+        /// </summary>
+        public static string menu_report_cto_upee_full {
+            get {
+                return ResourceManager.GetString("menu_report_cto_upee_full", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Левченко Эдуард.
         /// </summary>
         public static string name_developers_admin {
@@ -498,6 +624,15 @@ namespace WebUI.App_LocalResources {
         public static string name_developers_section_full {
             get {
                 return ResourceManager.GetString("name_developers_section_full", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Отчет потребления энергоресурсов АДД.
+        /// </summary>
+        public static string report_add_energy {
+            get {
+                return ResourceManager.GetString("report_add_energy", resourceCulture);
             }
         }
         
@@ -588,6 +723,60 @@ namespace WebUI.App_LocalResources {
         public static string select_date_title {
             get {
                 return ResourceManager.GetString("select_date_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Энергоресурсы АМКР.
+        /// </summary>
+        public static string ugenergy_section {
+            get {
+                return ResourceManager.GetString("ugenergy_section", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Отчеты потреблению энергоресурсов АМКР.
+        /// </summary>
+        public static string ugenergy_title {
+            get {
+                return ResourceManager.GetString("ugenergy_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на CTO, УЭЭ.
+        /// </summary>
+        public static string upee_section {
+            get {
+                return ResourceManager.GetString("upee_section", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Отчеты УЭЭ.
+        /// </summary>
+        public static string upee_title {
+            get {
+                return ResourceManager.GetString("upee_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Энергоресурсы АМКР.
+        /// </summary>
+        public static string upeeenergy_section {
+            get {
+                return ResourceManager.GetString("upeeenergy_section", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Отчеты потреблению энергоресурсов АМКР.
+        /// </summary>
+        public static string upeeenergy_title {
+            get {
+                return ResourceManager.GetString("upeeenergy_title", resourceCulture);
             }
         }
     }

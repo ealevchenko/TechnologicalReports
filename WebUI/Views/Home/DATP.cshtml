@@ -1,0 +1,13 @@
+﻿@using WebUI.App_LocalResources;
+
+@{
+    ViewBag.Title = @GlobalResource.datp_title;
+    ViewBag.Section = @GlobalResource.datp_section;
+    ViewBag.URL = "../Images/layout-report/datp.jpg";
+    ViewBag.HierarchyMenu = "CTO";
+    Layout = "~/Views/Shared/_LayoutReportMenu.cshtml";
+}
+
+<ul class="bmenu">
+    <li>@Html.ActionLink(@GlobalResource.menu_report_cto_datp_ug_full, "DATPUG", "Home")</li>
+</ul>

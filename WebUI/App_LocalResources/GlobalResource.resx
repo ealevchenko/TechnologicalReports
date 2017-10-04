@@ -294,4 +294,67 @@
   <data name="select_date_title" xml:space="preserve">
     <value>Выберите дату</value>
   </data>
+  <data name="cto_section" xml:space="preserve">
+    <value>CTO</value>
+  </data>
+  <data name="cto_title" xml:space="preserve">
+    <value>Отчеты CTO</value>
+  </data>
+  <data name="datpug_section" xml:space="preserve">
+    <value>ДАТП, УГ</value>
+  </data>
+  <data name="datpug_title" xml:space="preserve">
+    <value>Отчеты УГ ДАТП</value>
+  </data>
+  <data name="datp_section" xml:space="preserve">
+    <value>CTO, ДАТП</value>
+  </data>
+  <data name="datp_title" xml:space="preserve">
+    <value>Отчеты ДАТП</value>
+  </data>
+  <data name="ed_section" xml:space="preserve">
+    <value>ЭД</value>
+  </data>
+  <data name="ed_title" xml:space="preserve">
+    <value>Отчеты ЭД</value>
+  </data>
+  <data name="menu_report_cto_datp" xml:space="preserve">
+    <value>ДАТП</value>
+  </data>
+  <data name="menu_report_cto_datp_full" xml:space="preserve">
+    <value>Департамент автоматизации технологических процессов</value>
+  </data>
+  <data name="menu_report_cto_datp_ug" xml:space="preserve">
+    <value>УГ ДАТП</value>
+  </data>
+  <data name="menu_report_cto_datp_ug_full" xml:space="preserve">
+    <value>Учетная группа</value>
+  </data>
+  <data name="menu_report_cto_upee" xml:space="preserve">
+    <value>УЭЭ</value>
+  </data>
+  <data name="menu_report_cto_upee_full" xml:space="preserve">
+    <value>Управление по энергоэффективности</value>
+  </data>
+  <data name="report_add_energy" xml:space="preserve">
+    <value>Отчет потребления энергоресурсов АДД</value>
+  </data>
+  <data name="ugenergy_section" xml:space="preserve">
+    <value>Энергоресурсы АМКР</value>
+  </data>
+  <data name="ugenergy_title" xml:space="preserve">
+    <value>Отчеты потреблению энергоресурсов АМКР</value>
+  </data>
+  <data name="upeeenergy_section" xml:space="preserve">
+    <value>Энергоресурсы АМКР</value>
+  </data>
+  <data name="upeeenergy_title" xml:space="preserve">
+    <value>Отчеты потреблению энергоресурсов АМКР</value>
+  </data>
+  <data name="upee_section" xml:space="preserve">
+    <value>CTO, УЭЭ</value>
+  </data>
+  <data name="upee_title" xml:space="preserve">
+    <value>Отчеты УЭЭ</value>
+  </data>
 </root>

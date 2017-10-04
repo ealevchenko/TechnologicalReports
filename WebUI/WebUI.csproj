@@ -284,6 +284,15 @@
     <Content Include="Views\EnergyDay\BFS2.cshtml" />
     <Content Include="Views\EnergyDay\ADD.cshtml" />
     <Content Include="Views\EnergyDay\EnergyDay.cshtml" />
+    <Content Include="Views\Home\ED.cshtml" />
+    <Content Include="Views\Home\CTO.cshtml" />
+    <Content Include="Views\Home\UPEE.cshtml" />
+    <Content Include="Views\Home\UPEEEnergy.cshtml" />
+    <Content Include="Views\EnergyDay\UPEE.cshtml" />
+    <Content Include="Views\Home\DATP.cshtml" />
+    <Content Include="Views\Home\DATPUG.cshtml" />
+    <Content Include="Views\Home\UGEnergy.cshtml" />
+    <Content Include="Views\EnergyDay\DATPUG.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

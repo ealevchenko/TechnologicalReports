@@ -104,5 +104,68 @@ namespace WebUI.App_LocalResources {
                 return ResourceManager.GetString("BFS2Unload", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на CTO.
+        /// </summary>
+        public static string CTO {
+            get {
+                return ResourceManager.GetString("CTO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на ДАТП.
+        /// </summary>
+        public static string DATP {
+            get {
+                return ResourceManager.GetString("DATP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на УГ.
+        /// </summary>
+        public static string DATPUG {
+            get {
+                return ResourceManager.GetString("DATPUG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на ЭД.
+        /// </summary>
+        public static string ED {
+            get {
+                return ResourceManager.GetString("ED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Энергоресурсы.
+        /// </summary>
+        public static string UGEnergy {
+            get {
+                return ResourceManager.GetString("UGEnergy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на УЭЭ.
+        /// </summary>
+        public static string UPEE {
+            get {
+                return ResourceManager.GetString("UPEE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Энергоресурсы.
+        /// </summary>
+        public static string UPEEEnergy {
+            get {
+                return ResourceManager.GetString("UPEEEnergy", resourceCulture);
+            }
+        }
     }
 }

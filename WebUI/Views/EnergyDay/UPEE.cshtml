@@ -1,0 +1,14 @@
+﻿@using WebUI.App_LocalResources;
+
+@{
+    ViewBag.Title = @EnergySutkiResource.report_add_title;
+    ViewBag.Section = @EnergySutkiResource.report_add_section;
+    ViewBag.URL = "../Images/layout-report/work.jpg";
+    ViewBag.HierarchyMenu = "CTO;UPEE;UPEEEnergy";
+    Layout = "~/Views/Shared/_LayoutReport.cshtml";
+}
+@{
+    TReport.TData.trObj[] obj = new TReport.TData.trObj[] { TReport.TData.trObj.dc1_dp6, TReport.TData.trObj.dc1_dp7, TReport.TData.trObj.dc1_dp8, TReport.TData.trObj.dc2_dp9 };
+}
+
+@{ Html.RenderAction("EnergyDay", "EnergyDay", new { title = @ViewBag.Title, date = @DateTime.Parse(@ViewBag.dt), obj }); }

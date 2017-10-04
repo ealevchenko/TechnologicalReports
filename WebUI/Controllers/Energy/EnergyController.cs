@@ -44,7 +44,17 @@ namespace WebUI.Controllers.Energy
             return View();
         }
 
+        public ActionResult UPEE()
+        {
+            ViewBag.dt = DateTime.Now.AddDays(-1).Date.ToShortDateString();
+            return View();
+        }
 
+        public ActionResult DATPUG()
+        {
+            ViewBag.dt = DateTime.Now.AddDays(-1).Date.ToShortDateString();
+            return View();
+        }
 
         //public PartialViewResult EnergySutki(string title, DateTime date, string obj)
         //{
