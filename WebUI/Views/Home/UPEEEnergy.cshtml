@@ -3,11 +3,10 @@
 @{
     ViewBag.Title = @GlobalResource.upeeenergy_title;
     ViewBag.Section = @GlobalResource.upeeenergy_section;
-    ViewBag.URL = "../Images/layout-report/work.jpg";
-    ViewBag.HierarchyMenu = "CTO;UPEE";
-    Layout = "~/Views/Shared/_LayoutReportMenu.cshtml";
+    ViewBag.HierarchyMenu = @ViewBag.HierarchyMenu;
+    Layout = "~/Views/Shared/_LayoutReportCTO.cshtml";
 }
 
 <ul class="bmenu">
-    <li>@Html.ActionLink(@GlobalResource.report_add_energy, "UPEE", "EnergyDay")</li>
+    <li>@Html.ActionLink(@GlobalResource.report_add_energy, "EnergySutkiADDForUPEE", "EnergyDay")</li>
 </ul>

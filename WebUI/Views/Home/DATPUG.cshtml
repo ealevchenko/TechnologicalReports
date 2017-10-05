@@ -3,9 +3,8 @@
 @{
     ViewBag.Title = @GlobalResource.datpug_title;
     ViewBag.Section = @GlobalResource.datpug_section;
-    ViewBag.URL = "../Images/layout-report/datp.jpg";
-    ViewBag.HierarchyMenu = "CTO;DATP";
-    Layout = "~/Views/Shared/_LayoutReportMenu.cshtml";
+    ViewBag.HierarchyMenu = @ViewBag.HierarchyMenu;
+    Layout = "~/Views/Shared/_LayoutReportDATP.cshtml";
 }
 
 <ul class="bmenu">

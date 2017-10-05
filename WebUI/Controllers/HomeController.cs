@@ -30,6 +30,7 @@ namespace WebUI.Controllers
         /// <returns></returns>
         public ActionResult BFS2()
         {
+            ViewBag.HierarchyMenu = "HOME:ADD";
             return View();
         }
         /// <summary>
@@ -38,6 +39,7 @@ namespace WebUI.Controllers
         /// <returns></returns>
         public ActionResult BFS2Unload()
         {
+            ViewBag.HierarchyMenu = "HOME:ADD;HOME:BFS2";
             return View();
         }
         /// <summary>
@@ -46,6 +48,7 @@ namespace WebUI.Controllers
         /// <returns></returns>
         public ActionResult BFS2Energy()
         {
+            ViewBag.HierarchyMenu = "HOME:ADD;HOME:BFS2";
             return View();
         }
         #endregion
@@ -76,6 +79,7 @@ namespace WebUI.Controllers
         /// <returns></returns>
         public ActionResult UPEE()
         {
+            ViewBag.HierarchyMenu = "HOME:CTO";
             return View();
         }
         /// <summary>
@@ -84,21 +88,25 @@ namespace WebUI.Controllers
         /// <returns></returns>
         public ActionResult UPEEEnergy()
         {
+            ViewBag.HierarchyMenu = "HOME:CTO;HOME:UPEE";
             return View();
         }
 
         public ActionResult DATP()
         {
+            ViewBag.HierarchyMenu = "HOME:CTO";
             return View();
         }
 
         public ActionResult DATPUG()
         {
+            ViewBag.HierarchyMenu = "HOME:CTO;HOME:DATP";
             return View();
         }
 
         public ActionResult UGEnergy()
         {
+            ViewBag.HierarchyMenu = "HOME:CTO;HOME:DATP;HOME:DATPUG";
             return View();
         }
 

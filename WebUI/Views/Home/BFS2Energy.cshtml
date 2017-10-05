@@ -3,13 +3,12 @@
 @{
     ViewBag.Title = @GlobalResource.bfs2energy_title;
     ViewBag.Section = @GlobalResource.bfs2energy_section;
-    ViewBag.URL = "../Images/layout-report/dp.jpg";
-    ViewBag.HierarchyMenu = "ADD;BFS2";
-    Layout = "~/Views/Shared/_LayoutReportMenu.cshtml";
+    ViewBag.HierarchyMenu = @ViewBag.HierarchyMenu;
+    Layout = "~/Views/Shared/_LayoutReportADD.cshtml";
 }
 
 <ul class="bmenu">
-    <li>@Html.ActionLink(@GlobalResource.report_bf9_energy, "BFS2", "EnergyDay")</li>
-    <li>@Html.ActionLink(@GlobalResource.report_bf9_energy, "ADD", "EnergyDay")</li>
+    @*<li>@Html.ActionLink(@GlobalResource.report_bf9_energy, "EnergySutkiADDForADD", "EnergyDay")</li>*@
+    <li>@Html.ActionLink(@GlobalResource.report_bf9_energy, "EnergySutkiADDForBFS2", "EnergyDay")</li>
 </ul>
 

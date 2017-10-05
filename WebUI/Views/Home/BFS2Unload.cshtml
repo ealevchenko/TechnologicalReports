@@ -1,11 +1,11 @@
 ﻿@using WebUI.App_LocalResources;
+@model List<WebUI.Models.HierarchMenu>
 
 @{
     ViewBag.Title = @GlobalResource.bfs2unload_title;
     ViewBag.Section = @GlobalResource.bfs2unload_section;
-    ViewBag.URL = "../Images/layout-report/dp.jpg";
-    ViewBag.HierarchyMenu = "ADD;BFS2";
-    Layout = "~/Views/Shared/_LayoutReportMenu.cshtml";
+    ViewBag.HierarchyMenu = @ViewBag.HierarchyMenu;
+    Layout = "~/Views/Shared/_LayoutReportADD.cshtml";
 }
 
 <ul class="bmenu">

@@ -1,11 +1,9 @@
 ﻿@using WebUI.App_LocalResources;
-
 @{
     ViewBag.Title = @GlobalResource.bfs2_title;
     ViewBag.Section = @GlobalResource.bfs2_section;
-    ViewBag.URL = "../Images/layout-report/dp.jpg";
-    ViewBag.HierarchyMenu = "ADD";
-    Layout = "~/Views/Shared/_LayoutReportMenu.cshtml";
+    ViewBag.HierarchyMenu = @ViewBag.HierarchyMenu;
+    Layout = "~/Views/Shared/_LayoutReportADD.cshtml";
 }
 
 <ul class="bmenu">
