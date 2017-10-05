@@ -41,7 +41,7 @@ namespace WebUI.Controllers.BFS2
         /// <returns></returns>
         public ActionResult UnloadBunker()
         {
-            //string d = Thread.CurrentThread.CurrentCulture.Name;
+            ViewBag.HierarchyMenu = "HOME:ADD;HOME:BFS2;HOME:BFS2Unload";
             ViewBag.dt_start = Thread.CurrentThread.CurrentCulture.Name=="en-US" ?  DateTime.Now.Date.ToString("MM/dd/yyyy 00:00") : DateTime.Now.Date.ToString("dd.MM.yyyy 00:00");
             ViewBag.dt_stop = Thread.CurrentThread.CurrentCulture.Name=="en-US" ? DateTime.Now.AddDays(1).Date.AddSeconds(-1).ToString("MM/dd/yyyy 23:59"): DateTime.Now.AddDays(1).Date.AddSeconds(-1).ToString("dd.MM.yyyy 23:59");
             return View();
@@ -67,6 +67,7 @@ namespace WebUI.Controllers.BFS2
         /// <returns></returns>
         public ActionResult UnloadMaterialSmena()
         {
+            ViewBag.HierarchyMenu = "HOME:ADD;HOME:BFS2;HOME:BFS2Unload";
             ViewBag.dt = DateTime.Now.Date.ToShortDateString();
             return View();
         }

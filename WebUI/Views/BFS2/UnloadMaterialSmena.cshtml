@@ -12,9 +12,8 @@
     };
     ViewBag.Title = @BF9UnloadMaterialResource.report_title;
     ViewBag.Section = @BF9UnloadMaterialResource.report_section;
-    ViewBag.URL = "../Images/layout-report/dp.jpg";
-    ViewBag.HierarchyMenu = "ADD;BFS2;BFS2Unload";
-    Layout = "~/Views/Shared/_LayoutReport.cshtml";
+    ViewBag.HierarchyMenu = @ViewBag.HierarchyMenu;
+    Layout = "~/Views/Shared/_LayoutReportADD.cshtml";
 }
 @Scripts.Render("~/bundles/Ajax")
 @Scripts.Render("~/bundles/jqueryval")
