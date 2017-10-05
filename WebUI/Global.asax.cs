@@ -21,6 +21,7 @@ namespace WebUI
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory());
+            ViewEngines.Engines.Add(new CustomLocationViewEngine());
         }
 
         protected void Application_BeginRequest()

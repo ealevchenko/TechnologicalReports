@@ -1,0 +1,14 @@
+﻿@model string
+
+@{
+    ViewBag.Title = "AccessDenied";
+    ViewBag.Home = "error";
+    ViewBag.Section = "Access";
+    ViewBag.URL = "../Images/layout-report/work.jpg";
+        
+}
+@{
+    string[] message = @Model.Split(';'); 
+}
+
+Для учетной  записи: @message[0] доступ запрещен к ресурсу @message[1]!

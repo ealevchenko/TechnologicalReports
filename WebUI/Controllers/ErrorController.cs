@@ -26,5 +26,10 @@ namespace WebUI.Controllers
         {
             // TODO: Add a logging code here (just a reminder).
         }
+
+        public ActionResult AccessDenied(string message)
+        {
+            return this.View(message);
+        }
     }
 }

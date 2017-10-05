@@ -168,7 +168,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BFS2\BFS2Controller.cs" />
-    <Compile Include="Controllers\Energy\EnergyController.cs" />
+    <Compile Include="Controllers\Energy\EnergyDayController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -176,7 +176,10 @@
     </Compile>
     <Compile Include="Helpers\View.cs" />
     <Compile Include="Helpers\ViewReports.cs" />
+    <Compile Include="Infrastructure\CustomLocationViewEngine.cs" />
     <Compile Include="Infrastructure\NinjectControllerFactory.cs" />
+    <Compile Include="Infrastructure\ViewActionAttribute.cs" />
+    <Compile Include="Infrastructure\ViewAuthorizeAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -204,6 +207,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\error.jpg" />
+    <Content Include="Images\error\404.jpg" />
+    <Content Include="Images\error\error403.jpg" />
+    <Content Include="Images\error\eve500error.png" />
     <Content Include="Images\home\add.png" />
     <Content Include="Images\home\datp.png" />
     <Content Include="Images\home\ed.png" />
@@ -259,16 +266,13 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\BFS2\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutReport.cshtml" />
-    <Content Include="Views\Shared\_LayoutReportMenu.cshtml" />
     <Content Include="Views\Home\ADD.cshtml" />
     <Content Include="Views\Home\BFS2.cshtml" />
-    <Content Include="Views\Home\MenuHierarchy.cshtml" />
     <Content Include="Views\Home\BFS2Unload.cshtml" />
     <Content Include="Views\BFS2\UnloadMaterial.cshtml" />
     <Content Include="Views\BFS2\UnloadBunker.cshtml" />
@@ -288,14 +292,22 @@
     <Content Include="Views\Home\CTO.cshtml" />
     <Content Include="Views\Home\UPEE.cshtml" />
     <Content Include="Views\Home\UPEEEnergy.cshtml" />
-    <Content Include="Views\EnergyDay\UPEE.cshtml" />
     <Content Include="Views\Home\DATP.cshtml" />
     <Content Include="Views\Home\DATPUG.cshtml" />
     <Content Include="Views\Home\UGEnergy.cshtml" />
-    <Content Include="Views\EnergyDay\DATPUG.cshtml" />
+    <Content Include="Views\Shared\_LayoutReportCTO.cshtml" />
+    <Content Include="Views\Shared\_LayoutReportADD.cshtml" />
+    <Content Include="Views\Shared\_LayoutReportSD.cshtml" />
+    <Content Include="Views\Shared\_LayoutReportRD.cshtml" />
+    <Content Include="Views\Shared\_LayoutReportED.cshtml" />
+    <Content Include="Views\Shared\_LayoutReportDATP.cshtml" />
+    <Content Include="Views\Home\MenuHierarchy.cshtml" />
+    <Content Include="Views\Error\AccessDenied.cshtml" />
+    <Content Include="Views\Shared\_LayoutReportError.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
