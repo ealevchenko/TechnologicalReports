@@ -3,9 +3,8 @@
 @{
     ViewBag.Title = @EnergySutkiResource.report_bfs2_title;
     ViewBag.Section = @EnergySutkiResource.report_bfs2_section;
-    ViewBag.URL = "../Images/layout-report/dp.jpg";
-    ViewBag.HierarchyMenu = "ADD;BFS2;BFS2Energy";
-    Layout = "~/Views/Shared/_LayoutReport.cshtml";
+    ViewBag.HierarchyMenu = @ViewBag.HierarchyMenu;
+    Layout = "~/Views/Shared/_LayoutReportADD.cshtml";
 }
 @{
     TReport.TData.trObj[] obj = new TReport.TData.trObj[] { TReport.TData.trObj.dc2_dp9 };
