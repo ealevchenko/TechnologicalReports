@@ -53,7 +53,7 @@ namespace WebUI.Controllers.Energy
             return View();
         }
 
-        [ViewAuthorize(Roles = @"EUROPE\KRR-LG-PA-TR_ADD_Leaders, EUROPE\KRR-LG-PA-TR_BFS2_Leaders, EUROPE\KRR-LG-PA-TR_BF9_Technolog, EUROPE\KRR-LG-PA-TR_DATP_Leaders , EUROPE\KRR-LG-PA-TR_DATP_BFS2_Engineer , EUROPE\KRR-LG-PA-TR_Developers")]
+        [ViewAuthorize(Roles = @"EUROPE\KRR-LG-PA-TR_ADD_Leaders, EUROPE\KRR-LG-PA-TR_BFS2_Leaders, EUROPE\KRR-LG-PA-TR_BF9_Technolog, EUROPE\KRR-LG-PA-TR_DATP_Leaders , EUROPE\KRR-LG-PA-TR_DATP_BFS2_Engineer, EUROPE\KRR-LG-PA-TR_Developers")] // 
         public RedirectToRouteResult EnergySutkiADDForBFS2()
         {
             string HierarchyMenu = "HOME:ADD;HOME:BFS2;HOME:BFS2Energy";
