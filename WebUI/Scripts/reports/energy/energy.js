@@ -1,5 +1,10 @@
 ﻿$(document).ready(function () {
 
+    $('#table-average-daily-expenses').DataTable({
+        "paging": false,
+        "info": false
+    });
+
     myVar = $.cookie('lang');
 
     $('#select-range').dateRangePicker(
@@ -107,6 +112,10 @@ function selectPeriod(data) {
     var target = $("#content");
     target.empty();
     target.append(data);
+    $('#table-average-daily-expenses').DataTable({
+        "paging": false,
+        "info": false
+    });
 }
 
 function OnBegin() {
