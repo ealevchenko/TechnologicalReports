@@ -60,7 +60,16 @@ namespace WebUI
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/Ajax").Include(
-            "~/Scripts/jquery.unobtrusive-ajax.min.js")); 
+            "~/Scripts/jquery.unobtrusive-ajax.min.js"));
+
+            // Плагин таблицы
+            bundles.Add(new StyleBundle("~/table/css").Include("~/Content/table/jquery.dataTables.min.css",
+                "~/Content/table/jquery-ui.css"));
+            bundles.Add(new ScriptBundle("~/bundles/table")
+                .Include(
+                 "~/Scripts/table/jquery.dataTables.min.js",
+                 "~/Scripts/table/dataTables.jqueryui.min.js"
+                ));
         }
     }
 }
