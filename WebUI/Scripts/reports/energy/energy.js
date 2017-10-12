@@ -1,9 +1,10 @@
 ﻿$(document).ready(function () {
 
-    $('#table-average-daily-expenses').DataTable({
-        "paging": false,
-        "info": false
-    });
+    //$('#table-average-daily-expenses').DataTable({
+    //    "paging": false,
+    //    "ordering": false,
+    //    "info": false
+    //});
 
     myVar = $.cookie('lang');
 
@@ -112,10 +113,11 @@ function selectPeriod(data) {
     var target = $("#content");
     target.empty();
     target.append(data);
-    $('#table-average-daily-expenses').DataTable({
-        "paging": false,
-        "info": false
-    });
+    //$('#table-average-daily-expenses').DataTable({
+    //    "paging": false,
+    //    "ordering": false,
+    //    "info": false
+    //});
 }
 
 function OnBegin() {

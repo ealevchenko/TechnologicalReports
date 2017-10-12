@@ -8,57 +8,133 @@
     width: 1500px;
 }
 
-table.table-unloadmaterial {
+#table-flow-energy-day table
+{
     font-size:16px;
-    /*font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;*/
-    border:1px solid #808080;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: 1px solid #808080;
+    width: auto;
+    color: #000000;
+    border-spacing: 1px;
+    border-radius: 3px;
+    background-color: #F7F6F3;    
 }
 
-th.name-field{
-    background:#808080;
-    color:#ffffff;
-    font-weight:600;
-    text-transform:uppercase;
+#table-flow-energy-day caption {
+    font-variant: small-caps;
+    width: 100%;
+    color: #000099;
+    border-spacing: 3px;
+    border-radius: 3px;
+    background-color: #CCCCCC;
+    font-weight: normal;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-th.type-material {
-    background:#dcd6d6;
-    color:#4d4949;
+#table-flow-energy-day th
+{
+    border: 1px solid #000000; border-radius: 3px;
+    color: #FFFFFF;
+    border-spacing: 3px;
+    background-color: #00547E;
+    font-weight: bold;
+    font-size: larger;
+}
+
+#table-flow-energy-day td
+{
+    border: 1px solid #000000; border-radius: 3px;
+    color: #000000;
+    border-spacing: 2px;
+    text-align: center;
+}
+
+#table-flow-energy-day th.name {
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    width: 240px;
+}
+#table-flow-energy-day th.Object {
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    width: 80px;
+}
+#table-flow-energy-day td.flow-init
+{
+    text-align: center;
+    width: 70px;
+}
+#table-flow-energy-day td.flow {
+    text-align: right;
+    width: 60px;
+    background-color: #CCFF99;
+}
+#table-flow-energy-day td.temp {
+    text-align: right;
+    width: 60px;
+    background-color: #99CCFF;
+}
+#table-flow-energy-day td.temp-unit
+{
     text-align:center;
-    font-weight:400;
+    width: 70px;
 }
-
-th.material {
-    background:#dcd6d6;
-    color:#4d4949;
-    text-align:right;
-    text-transform:uppercase;
-    font-weight:200;
+#table-flow-energy-day td.pressure
+{
+    text-align: right;
+    width: 60px;
+    background-color: #99CCFF;
 }
-
-td.ves-material {
-    border:1px solid #808080;
+#table-flow-energy-day td.pressure-unit
+{
     text-align:center;
-    color:#0094ff;
-    font-weight:400;
+    width: 70px;
 }
-
-td.itogo-ves-material {
-    border:1px solid #808080;
-    background:#808080;
+#table-flow-energy-day td.planimetric
+{
+    text-align: right;
+    width: 60px;
+    background-color: #99CCFF;
+}
+#table-flow-energy-day td.planimetric-unit
+{
     text-align:center;
-    color:#ffffff;
-    font-weight:600;
-    margin-bottom:5px;
+    width: 70px;
 }
-tr.foot {
-    padding-bottom:10px;
+#table-flow-energy-day td.pr-flow
+{
+    text-align: right;
+    width: 60px;
+    background-color: #CCFF99;
+}
+#table-flow-energy-day td.pr-flow-unit
+{
+    text-align:center;
+    width: 70px;
+}
+#table-flow-energy-day td.time-norm {
+    text-align: right;
+    width: 60px;
+    background-color: #FFFFCC;
+}
+#table-flow-energy-day td.time-norm-unit
+{
+    text-align:center;
+    width: 70px;
+}
+#table-flow-energy-day td.time-max
+{
+    text-align: right;
+    width: 60px;
+    background-color: #FFFFCC;
+}
+#table-flow-energy-day td.time-max-unit
+{
+    text-align:center;
+    width: 70px;
 }
 
-div.errorMsg {color: red; 
-              position:fixed;
-              left:700px;
-}
-
-.invalidElem {border: 1px solid red}
  

@@ -1,95 +1,152 @@
-﻿@model List<TReport.TREntities.TREnergy.GroupEnergyValueObjEntity>
+﻿@model List<TReport.TREntities.TREnergy.GroupEnergyFlowValueEntity>
 @*class="table-average-daily-expenses"*@
-<table class="display compact" id="table-average-daily-expenses">
-    <thead>
-        @*<tr>
-                <th class="name-field">Материал</th>
-                <th class="name-field">Смена Д</th>
-                <th class="name-field">Смена Н</th>
-                <th class="name-field">Сутки</th>
-                <th class="name-field">Месяц</th>
-            </tr>*@
+<table class="table" id="table-flow-energy-day">
+    @*<thead>*@
+    @*<tr>
+            <th class="name-field">Материал</th>
+            <th class="name-field">Смена Д</th>
+            <th class="name-field">Смена Н</th>
+            <th class="name-field">Сутки</th>
+            <th class="name-field">Месяц</th>
+        </tr>*@
 
-        <tr>
-            <th rowspan="3">Наименование</th>
-            <th rowspan="3">Агрегат</th>
-            <th rowspan="2" colspan="2">Расход за сутки</th>
-            <th colspan="6">Среднесуточные значения</th>
-            <th rowspan="2" colspan="2">Расход приведен.</th>
-            <th colspan="4">Время подачи</th>
-        </tr>
-        <tr>
-            <th colspan="2">Температура</th>
-            <th colspan="2">Давление</th>
-            <th colspan="2">Планим. число</th>
-            <th colspan="2">Норма</th>
-            <th colspan="2">Макс</th>
-        </tr>
-        <tr>
-            <th>Ед.изм.</th>
-            <th>Значение</th>
-            <th>Значение</th>
-            <th>Ед.изм.</th>
-            <th>Значение</th>
-            <th>Ед.изм.</th>
-            <th>Значение</th>
-            <th>Ед.изм.</th>
-            <th>Значение</th>
-            <th>Ед.изм.</th>
-            <th>Значение</th>
-            <th>Ед.изм.</th>
-            <th>Значение</th>
-            <th>Ед.изм.</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (TReport.TREntities.TREnergy.GroupEnergyValueObjEntity groupitem in Model)
+    <tr>
+        <th rowspan="3">Наименование</th>
+        <th rowspan="3">Агрегат</th>
+        <th rowspan="2" colspan="2">Расход за сутки</th>
+        <th colspan="6">Среднесуточные значения</th>
+        <th rowspan="2" colspan="2">Расход приведен.</th>
+        <th colspan="4">Время подачи</th>
+    </tr>
+    <tr>
+        <th colspan="2">Температура</th>
+        <th colspan="2">Давление</th>
+        <th colspan="2">Планим. число</th>
+        <th colspan="2">Норма</th>
+        <th colspan="2">Макс</th>
+    </tr>
+    <tr>
+        <th>Ед.изм.</th>
+        <th>Значение</th>
+        <th>Значение</th>
+        <th>Ед.изм.</th>
+        <th>Значение</th>
+        <th>Ед.изм.</th>
+        <th>Значение</th>
+        <th>Ед.изм.</th>
+        <th>Значение</th>
+        <th>Ед.изм.</th>
+        <th>Значение</th>
+        <th>Ед.изм.</th>
+        <th>Значение</th>
+        <th>Ед.изм.</th>
+    </tr>
+    @*</thead>*@
+    @*<tbody>*@
+    @foreach (TReport.TREntities.TREnergy.GroupEnergyFlowValueEntity groupitem in @Model.OrderBy(g => g.position))
+    {
+        <tr><th colspan="16">@groupitem.name.ToUpper()</th></tr>
+        foreach (TReport.TREntities.TREnergy.TypeEnergyFlowValueEntity typeitem in groupitem.list_type.OrderBy(t => t.position))
         {
-            foreach (TReport.TREntities.TREnergy.TypeEnergyValueObjEntity typeitem in groupitem.list_type_energy)
+            foreach (TReport.TREntities.TREnergy.EnergyFlowValueEntity ei in typeitem.list_type_flow.OrderBy(i => i.position))
             {
-                foreach (TReport.TREntities.TREnergy.EnergyValueObjEntity ei in typeitem.list_energy)
-                {
-                    <tr>
-                        <th>@typeitem.name</th>
-                        <th>@ei.Object</th>
-                        <th>@ei.flow.GetUnitMultiplier()</th>
-                        <td>@ei.flow.GetValue("n2")</td>
-                        <td>@ei.avg_temp.GetValue("n2")</td>
-                        <td>@ei.avg_temp.GetUnitMultiplier()</td>
-                        <td>@ei.avg_pressure.GetValue("n2")</td>
-                        <td>@ei.avg_pressure.GetUnitMultiplier()</td>
-                        <td>@ei.planimetric.GetValue("0.####")</td>
-                        <td>@ei.planimetric.GetUnitMultiplier()</td>
-                        <td>@ei.pr_flow.GetValue("n2")</td>
-                        <td>@ei.pr_flow.GetUnitMultiplier()</td>
-                        <td>@ei.time_norm.GetValue("n0")</td>
-                        <td>@ei.time_norm.GetUnitMultiplier()</td>
-                        <td>@ei.time_max.GetValue("n0")</td>
-                        <td>@ei.time_max.GetUnitMultiplier()</td>
-                    </tr>
-                }
+                <tr>
+                    <th class="name">@ei.name</th>
+                    <th class="Object">@ei.Object</th>
+                    <td class="flow-unit">
+                        @if (ei.flow != null)
+                        { @ei.flow.GetUnitMultiplier();
+                        }
+                    </td>
+                    <td class="flow">
+                        @if (ei.flow != null)
+                        { @ei.flow.GetValue("n2");
+                        }
+                    </td>
+                    <td class="temp">
+                        @if (ei.avg_temp != null)
+                        { @ei.avg_temp.GetValue("n2");
+                        }
+                    </td>
+                    <td class="temp-unit">
+                        @if (ei.avg_temp != null)
+                        { @ei.avg_temp.GetUnitMultiplier();
+                        }
+                    </td>
+                    <td class="pressure">
+                        @if (ei.avg_pressure != null)
+                        { @ei.avg_pressure.GetValue("n2");
+                        }
+                    </td>
+                    <td class="pressure-unit">
+                        @if (ei.avg_pressure != null)
+                        { @ei.avg_pressure.GetUnitMultiplier();
+                        }
+                    </td>
+                    <td class="planimetric">
+                        @if (ei.planimetric != null)
+                        { @ei.planimetric.GetValue("0.####");
+                        }
+                    </td>
+                    <td class="planimetric-unit">
+                        @if (ei.planimetric != null)
+                        { @ei.planimetric.GetUnitMultiplier();
+                        }
+                    </td>
+                    <td class="pr-flow">
+                        @if (ei.pr_flow != null)
+                        { @ei.pr_flow.GetValue("n2");
+                        }
+                    </td>
+                    <td class="pr-flow-unit">
+                        @if (ei.pr_flow != null)
+                        { @ei.pr_flow.GetUnitMultiplier();
+                        }
+                    </td>
+                    <td class="time-norm">
+                        @if (ei.time_norm != null)
+                        { @ei.time_norm.GetValue("n0");
+                        }
+                    </td>
+                    <td class="time-norm-unit">
+                        @if (ei.time_norm != null)
+                        { @ei.time_norm.GetUnitMultiplier();
+                        }
+                    </td>
+                    <td class="time-max">
+                        @if (ei.time_max != null)
+                        { @ei.time_max.GetValue("n0");
+                        }
+                    </td>
+                    <td class="time-max-unit">
+                        @if (ei.time_max != null)
+                        { @ei.time_max.GetUnitMultiplier();
+                        }
+                    </td>
+                </tr>
             }
-
-
-            @*<tr><th colspan="5" class="type-material">@groupitem.Key</th></tr>
-                foreach (UnloadMaterialSmena item in @groupitem)
-                {
-                    <tr>
-                        <th class="material">@item.Material</th>
-                        <td class="ves-material">@(String.Format("{0:0.00}", @item.Shift1))</td>
-                        <td class="ves-material">@(String.Format("{0:0.00}", @item.Shift2))</td>
-                        <td class="ves-material">@(String.Format("{0:0.00}", @item.day))</td>
-                        <td class="ves-material">@(String.Format("{0:0.00}", @item.Month))</td>
-                    </tr>
-
-                }
-                <tr class="foot">
-                    <th class="itogo-material"></th>
-                    <td class="itogo-ves-material">@(String.Format("{0:0.00}", @groupitem.Sum(s => s.Shift1)))</td>
-                    <td class="itogo-ves-material">@(String.Format("{0:0.00}", @groupitem.Sum(s => s.Shift2)))</td>
-                    <td class="itogo-ves-material">@(String.Format("{0:0.00}", @groupitem.Sum(s => s.day)))</td>
-                    <td class="itogo-ves-material">@(String.Format("{0:0.00}", @groupitem.Sum(s => s.Month)))</td>
-                </tr>*@
         }
-    </tbody>
+
+
+        @*<tr><th colspan="5" class="type-material">@groupitem.Key</th></tr>
+            foreach (UnloadMaterialSmena item in @groupitem)
+            {
+                <tr>
+                    <th class="material">@item.Material</th>
+                    <td class="ves-material">@(String.Format("{0:0.00}", @item.Shift1))</td>
+                    <td class="ves-material">@(String.Format("{0:0.00}", @item.Shift2))</td>
+                    <td class="ves-material">@(String.Format("{0:0.00}", @item.day))</td>
+                    <td class="ves-material">@(String.Format("{0:0.00}", @item.Month))</td>
+                </tr>
+
+            }
+            <tr class="foot">
+                <th class="itogo-material"></th>
+                <td class="itogo-ves-material">@(String.Format("{0:0.00}", @groupitem.Sum(s => s.Shift1)))</td>
+                <td class="itogo-ves-material">@(String.Format("{0:0.00}", @groupitem.Sum(s => s.Shift2)))</td>
+                <td class="itogo-ves-material">@(String.Format("{0:0.00}", @groupitem.Sum(s => s.day)))</td>
+                <td class="itogo-ves-material">@(String.Format("{0:0.00}", @groupitem.Sum(s => s.Month)))</td>
+            </tr>*@
+    }
+    @*</tbody>*@
 </table>

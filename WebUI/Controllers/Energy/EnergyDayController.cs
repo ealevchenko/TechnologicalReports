@@ -29,8 +29,8 @@ namespace WebUI.Controllers.Energy
         {
 
             TREnergy tre = new TREnergy(obj);
-            tre.GetEnergySutki(date);
-            return PartialView(tre.ListGroupEnergyValue);
+            tre.GetEnergyFlowDay(date);
+            return PartialView(tre.ListFlowDay);
         }
 
         public ActionResult BFS2(string HierarchyMenu)
