@@ -357,4 +357,16 @@
   <data name="upee_title" xml:space="preserve">
     <value>Отчеты УЭЭ</value>
   </data>
+  <data name="bfs1energy_section" xml:space="preserve">
+    <value>Энергоресурсы ДЦ-1</value>
+  </data>
+  <data name="bfs1_section" xml:space="preserve">
+    <value>АДД, ДЦ-1</value>
+  </data>
+  <data name="bfs1_title" xml:space="preserve">
+    <value>Отчеты ДЦ-1</value>
+  </data>
+  <data name="bfs1energy_title" xml:space="preserve">
+    <value>Отчеты потреблению энергоресурсов ДЦ-1</value>
+  </data>
 </root>

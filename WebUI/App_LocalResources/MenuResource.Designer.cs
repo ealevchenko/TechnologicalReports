@@ -70,11 +70,29 @@ namespace WebUI.App_LocalResources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на ДЦ-2.
+        ///   Ищет локализованную строку, похожую на ДЦ-1.
         /// </summary>
         public static string BFS1 {
             get {
                 return ResourceManager.GetString("BFS1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Энергоресурсы.
+        /// </summary>
+        public static string BFS1Energy {
+            get {
+                return ResourceManager.GetString("BFS1Energy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Загрузка.
+        /// </summary>
+        public static string BFS1Unload {
+            get {
+                return ResourceManager.GetString("BFS1Unload", resourceCulture);
             }
         }
         

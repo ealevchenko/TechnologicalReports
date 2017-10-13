@@ -51,6 +51,25 @@ namespace WebUI.Controllers
             ViewBag.HierarchyMenu = "HOME:ADD;HOME:BFS2";
             return View();
         }
+        /// <summary>
+        /// Меню ДЦ-1
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult BFS1()
+        {
+            ViewBag.HierarchyMenu = "HOME:ADD";
+            return View();
+        }
+        /// <summary>
+        /// Меню энергоресурсы
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult BFS1Energy()
+        {
+            ViewBag.HierarchyMenu = "HOME:ADD;HOME:BFS1";
+            return View();
+        }
+
         #endregion
 
         #region ЭД

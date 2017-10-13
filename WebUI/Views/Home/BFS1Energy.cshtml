@@ -1,0 +1,12 @@
+﻿@using WebUI.App_LocalResources;
+
+@{
+    ViewBag.Title = @GlobalResource.bfs1energy_title;
+    ViewBag.Section = @GlobalResource.bfs1energy_section;
+    ViewBag.HierarchyMenu = @ViewBag.HierarchyMenu;
+    Layout = "~/Views/Shared/_LayoutReportADD.cshtml";
+}
+
+<ul class="bmenu">
+    <li>@Html.ActionLink(@GlobalResource.report_bf9_energy, "EnergySutkiADDForBFS1", "EnergyDay")</li>
+</ul>

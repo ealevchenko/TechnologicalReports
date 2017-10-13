@@ -79,6 +79,42 @@ namespace WebUI.App_LocalResources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на АДД, ДЦ-1.
+        /// </summary>
+        public static string bfs1_section {
+            get {
+                return ResourceManager.GetString("bfs1_section", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Отчеты ДЦ-1.
+        /// </summary>
+        public static string bfs1_title {
+            get {
+                return ResourceManager.GetString("bfs1_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Энергоресурсы ДЦ-1.
+        /// </summary>
+        public static string bfs1energy_section {
+            get {
+                return ResourceManager.GetString("bfs1energy_section", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Отчеты потреблению энергоресурсов ДЦ-1.
+        /// </summary>
+        public static string bfs1energy_title {
+            get {
+                return ResourceManager.GetString("bfs1energy_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на АДД, ДЦ-2.
         /// </summary>
         public static string bfs2_section {

@@ -1,0 +1,13 @@
+﻿@using WebUI.App_LocalResources;
+@{
+    ViewBag.Title = @GlobalResource.bfs1_title;
+    ViewBag.Section = @GlobalResource.bfs1_section;
+    ViewBag.HierarchyMenu = @ViewBag.HierarchyMenu;
+    Layout = "~/Views/Shared/_LayoutReportADD.cshtml";
+}
+
+<ul class="bmenu">
+    <li>@Html.ActionLink(@GlobalResource.report_group_unload, "BFS1Unload", "Home")</li>
+    <li>@Html.ActionLink(@GlobalResource.report_group_energy, "BFS1Energy", "Home")</li>
+    <li>@Html.ActionLink(@GlobalResource.report_group_tehno, "BFS1Technology", "Home")</li>
+</ul>

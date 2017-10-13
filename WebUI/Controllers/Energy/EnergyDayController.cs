@@ -43,6 +43,16 @@ namespace WebUI.Controllers.Energy
             return View();
         }
 
+        public ActionResult BFS1(string HierarchyMenu)
+        {
+            ViewBag.HierarchyMenu = "HOME:ADD;HOME:BFS1;HOME:BFS1Energy";
+            if (!String.IsNullOrWhiteSpace(HierarchyMenu)) {
+                ViewBag.HierarchyMenu = HierarchyMenu;
+            } 
+            ViewBag.dt = DateTime.Now.AddDays(-1).Date.ToShortDateString();
+            return View();
+        }
+
         public ActionResult ADD(string HierarchyMenu)
         {
             ViewBag.HierarchyMenu = "HOME:ADD;HOME:BFS2;HOME:BFS2Energy";
@@ -58,7 +68,15 @@ namespace WebUI.Controllers.Energy
         {
             string HierarchyMenu = "HOME:ADD;HOME:BFS2;HOME:BFS2Energy";
             return RedirectToAction("BFS2", "EnergyDay", new { HierarchyMenu });
-        }        
+        }
+
+        [ViewAuthorize(Roles = @"EUROPE\KRR-LG-PA-TR_ADD_Leaders, EUROPE\KRR-LG-PA-TR_BFS1_Leaders, EUROPE\KRR-LG-PA-TR_BF8_Technolog,EUROPE\KRR-LG-PA-TR_BF7_Technolog,EUROPE\KRR-LG-PA-TR_BF6_Technolog, EUROPE\KRR-LG-PA-TR_DATP_Leaders , EUROPE\KRR-LG-PA-TR_DATP_BFS1_Engineer, EUROPE\KRR-LG-PA-TR_Developers")] // 
+        public RedirectToRouteResult EnergySutkiADDForBFS1()
+        {
+            string HierarchyMenu = "HOME:ADD;HOME:BFS1;HOME:BFS1Energy";
+            return RedirectToAction("BFS1", "EnergyDay", new { HierarchyMenu });
+        } 
+
         
         [ViewAuthorize(Roles = @"EUROPE\KRR-LG-PA-TR_ADD_Leaders, EUROPE\KRR-LG-PA-TR_DATP_Leaders , EUROPE\KRR-LG-PA-TR_Developers")]
         public RedirectToRouteResult EnergySutkiADDForADD()

@@ -121,7 +121,13 @@
     <value>АДД</value>
   </data>
   <data name="BFS1" xml:space="preserve">
-    <value>ДЦ-2</value>
+    <value>ДЦ-1</value>
+  </data>
+  <data name="BFS1Energy" xml:space="preserve">
+    <value>Энергоресурсы</value>
+  </data>
+  <data name="BFS1Unload" xml:space="preserve">
+    <value>Загрузка</value>
   </data>
   <data name="BFS2" xml:space="preserve">
     <value>ДЦ-2</value>

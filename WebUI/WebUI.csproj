@@ -167,6 +167,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BFS1\BFS1Controller.cs" />
     <Compile Include="Controllers\BFS2\BFS2Controller.cs" />
     <Compile Include="Controllers\Energy\EnergyDayController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
@@ -308,10 +309,14 @@
     <Content Include="Views\Home\MenuHierarchy.cshtml" />
     <Content Include="Views\Error\AccessDenied.cshtml" />
     <Content Include="Views\Shared\_LayoutReportError.cshtml" />
+    <Content Include="Views\Home\BFS1.cshtml" />
+    <Content Include="Views\Home\BFS1Energy.cshtml" />
+    <Content Include="Views\EnergyDay\BFS1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\BFS1\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
