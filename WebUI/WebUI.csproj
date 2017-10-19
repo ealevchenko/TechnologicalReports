@@ -177,6 +177,7 @@
     </Compile>
     <Compile Include="Helpers\View.cs" />
     <Compile Include="Helpers\ViewReports.cs" />
+    <Compile Include="Infrastructure\AccessAttribute.cs" />
     <Compile Include="Infrastructure\CustomLocationViewEngine.cs" />
     <Compile Include="Infrastructure\NinjectControllerFactory.cs" />
     <Compile Include="Infrastructure\ViewActionAttribute.cs" />
@@ -362,6 +363,10 @@
     <ProjectReference Include="..\TReports\EFBF9\EFBF9.csproj">
       <Project>{f3d4028c-6faa-4744-92f2-0ffa41f53de2}</Project>
       <Name>EFBF9</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TReports\EFTReports\EFTReports.csproj">
+      <Project>{9ed5ca1b-4f40-4bfb-a21d-59cd3fe388b4}</Project>
+      <Name>EFTReports</Name>
     </ProjectReference>
     <ProjectReference Include="..\TReports\MessageLogs\WebLogs\WebLogs.csproj">
       <Project>{f89091ab-e2d5-465e-9702-39cfa3a46f51}</Project>

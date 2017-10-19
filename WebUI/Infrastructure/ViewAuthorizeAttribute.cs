@@ -13,7 +13,6 @@ namespace WebUI.Infrastructure
         private string[] allowedRoles = new string[] { };
         private string RulesAccess = null;
         private bool? access = false;
-        //EFLogWebRepository logVisit = new EFLogWebRepository();
 
         public ViewAuthorizeAttribute()
         {

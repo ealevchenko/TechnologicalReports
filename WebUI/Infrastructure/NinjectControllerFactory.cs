@@ -1,5 +1,7 @@
 ﻿using EFBF9.Abstract;
 using EFBF9.Concrete;
+using EFTReports.Abstract;
+using EFTReports.Concrete;
 using Ninject;
 using System;
 using System.Collections.Generic;
@@ -35,6 +37,7 @@ namespace WebUI.Infrastructure
             // конфигурирование контейнера
             ninjectKernel.Bind<IBF9UnloadBunker>().To<EFBF9.Concrete.EFBF9>();
             ninjectKernel.Bind<IBF9UnloadMaterial>().To<EFBF9.Concrete.EFBF9>();
+            ninjectKernel.Bind<IAccess>().To<EFAccess>();
         }
     }
 
