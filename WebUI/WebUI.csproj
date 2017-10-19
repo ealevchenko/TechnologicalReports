@@ -363,6 +363,10 @@
       <Project>{f3d4028c-6faa-4744-92f2-0ffa41f53de2}</Project>
       <Name>EFBF9</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TReports\MessageLogs\WebLogs\WebLogs.csproj">
+      <Project>{f89091ab-e2d5-465e-9702-39cfa3a46f51}</Project>
+      <Name>WebLogs</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TReports\TReport\TReport.csproj">
       <Project>{d0f02229-8ed5-42ea-8378-23ac9402d60c}</Project>
       <Name>TReport</Name>

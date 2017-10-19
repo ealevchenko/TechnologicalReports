@@ -3,6 +3,7 @@ namespace WebUI.Controllers
     using System;
     using System.Web.Mvc;
 	using Moveax.Mvc.ErrorHandler;
+    using MessageLog;
 
     public class ErrorController : ErrorHandlerControllerBase
     {
@@ -24,6 +25,7 @@ namespace WebUI.Controllers
         /// <param name="errorDescription">The error description.</param>
         protected override void HandleError(ErrorDescription errorDescription)
         {
+            errorDescription.WriteError();
             // TODO: Add a logging code here (just a reminder).
         }
 

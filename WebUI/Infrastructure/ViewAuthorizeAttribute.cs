@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MessageLog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -60,7 +61,7 @@ namespace WebUI.Infrastructure
             if (filterContext.Result is ViewResult)
             {
                 // если не локал хост
-                //if (!filterContext.HttpContext.Request.IsLocal) logVisit.SaveVisit(filterContext, this.RulesAccess, this.access);
+                if (!filterContext.HttpContext.Request.IsLocal) filterContext.WriteVisit(this.RulesAccess, this.access);
                 return;
             }
         }
@@ -87,7 +88,7 @@ namespace WebUI.Infrastructure
             if (!(User(filterContext.HttpContext) && Role(filterContext.HttpContext)))
             {
                 // если не локал хост
-                //if (!filterContext.HttpContext.Request.IsLocal) logVisit.SaveVisit(filterContext, this.RulesAccess, this.access);
+                if (!filterContext.HttpContext.Request.IsLocal) filterContext.WriteVisit(this.RulesAccess, this.access);
                 string message = filterContext.HttpContext.User.Identity.Name + ";" + filterContext.ActionDescriptor.ActionName;
 
                 filterContext.Result = new ViewResult()
