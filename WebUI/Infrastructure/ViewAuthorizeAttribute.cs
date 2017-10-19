@@ -58,12 +58,13 @@ namespace WebUI.Infrastructure
         {
             if (filterContext.Result is PartialViewResult) return;
             // записываем логи только ViewResult
-            if (filterContext.Result is ViewResult)
-            {
+            //if (filterContext.Result is ViewResult)
+            //{
                 // если не локал хост
-                if (!filterContext.HttpContext.Request.IsLocal) filterContext.WriteVisit(this.RulesAccess, this.access);
+                if (!filterContext.HttpContext.Request.IsLocal) 
+                    filterContext.WriteVisit(this.RulesAccess, this.access);
                 return;
-            }
+            //}
         }
 
         public void OnActionExecuting(ActionExecutingContext filterContext)
@@ -88,7 +89,8 @@ namespace WebUI.Infrastructure
             if (!(User(filterContext.HttpContext) && Role(filterContext.HttpContext)))
             {
                 // если не локал хост
-                if (!filterContext.HttpContext.Request.IsLocal) filterContext.WriteVisit(this.RulesAccess, this.access);
+                if (!filterContext.HttpContext.Request.IsLocal) 
+                    filterContext.WriteVisit(this.RulesAccess, this.access);
                 string message = filterContext.HttpContext.User.Identity.Name + ";" + filterContext.ActionDescriptor.ActionName;
 
                 filterContext.Result = new ViewResult()
