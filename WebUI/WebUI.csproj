@@ -181,7 +181,6 @@
     <Compile Include="Infrastructure\CustomLocationViewEngine.cs" />
     <Compile Include="Infrastructure\NinjectControllerFactory.cs" />
     <Compile Include="Infrastructure\ViewActionAttribute.cs" />
-    <Compile Include="Infrastructure\ViewAuthorizeAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

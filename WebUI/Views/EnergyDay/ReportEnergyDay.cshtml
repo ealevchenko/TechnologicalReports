@@ -1,4 +1,7 @@
-﻿@model List<TReport.TREntities.TREnergy.GroupEnergyFlowValueEntity>
+﻿@using TReport.TRForms;
+@using Measurement;
+
+@model FormEnergyFlowDay
 @*class="table-average-daily-expenses"*@
 <table class="table" id="table-flow-energy-day">
     @*<thead>*@
@@ -43,84 +46,99 @@
     </tr>
     @*</thead>*@
     @*<tbody>*@
-    @foreach (TReport.TREntities.TREnergy.GroupEnergyFlowValueEntity groupitem in @Model.OrderBy(g => g.position))
+    @foreach (GroupEnergyFlowDay groupitem in @Model.Groups.OrderBy(g => g.position))
     {
         <tr><th colspan="16">@groupitem.name.ToUpper()</th></tr>
-        foreach (TReport.TREntities.TREnergy.TypeEnergyFlowValueEntity typeitem in groupitem.list_type.OrderBy(t => t.position))
+        foreach (TypeEnergyFlowDay typeitem in groupitem.Types.OrderBy(t => t.position))
         {
-            foreach (TReport.TREntities.TREnergy.EnergyFlowValueEntity ei in typeitem.list_type_flow.OrderBy(i => i.position))
+            foreach (ItemEnergyFlowDay ei in typeitem.Items.OrderBy(i => i.position))
             {
                 <tr>
                     <th class="name">@ei.name</th>
                     <th class="Object">@ei.Object</th>
                     <td class="flow-unit">
-                        @if (ei.flow != null)
-                        { @ei.flow.GetUnitMultiplier();
+                        @if (ei.flow != null && ei.flow.value != null)
+                        {
+                            @( ((DBValueMeasurement)ei.flow.value).GetUnitMultiplier())
                         }
                     </td>
                     <td class="flow">
-                        @if (ei.flow != null)
-                        { @ei.flow.GetValue("n2");
+                        @if (ei.flow != null && ei.flow.value != null)
+                        {
+                            @( ((DBValueMeasurement)ei.flow.value).GetValue("n2"))
                         }
                     </td>
                     <td class="temp">
-                        @if (ei.avg_temp != null)
-                        { @ei.avg_temp.GetValue("n2");
+                        @if (ei.avg_temp != null && ei.avg_temp.value != null)
+                        {
+                            @( ((DBValueMeasurement)ei.avg_temp.value).GetValue("n2"))
                         }
                     </td>
                     <td class="temp-unit">
-                        @if (ei.avg_temp != null)
-                        { @ei.avg_temp.GetUnitMultiplier();
+                        @if (ei.avg_temp != null && ei.avg_temp.value != null)
+                        {
+                            @( ((DBValueMeasurement)ei.avg_temp.value).GetUnitMultiplier())
                         }
                     </td>
                     <td class="pressure">
-                        @if (ei.avg_pressure != null)
-                        { @ei.avg_pressure.GetValue("n2");
+                        @if (ei.avg_pressure != null && ei.avg_pressure.value != null)
+                        {
+                            @( ((DBValueMeasurement)ei.avg_pressure.value).GetValue("n2"))
                         }
                     </td>
                     <td class="pressure-unit">
-                        @if (ei.avg_pressure != null)
-                        { @ei.avg_pressure.GetUnitMultiplier();
+                        @if (ei.avg_pressure != null && ei.avg_pressure.value != null)
+                        {
+                            @( ((DBValueMeasurement)ei.avg_pressure.value).GetUnitMultiplier())
                         }
                     </td>
                     <td class="planimetric">
-                        @if (ei.planimetric != null)
-                        { @ei.planimetric.GetValue("0.####");
+                        @if (ei.planimetric != null && ei.planimetric.value != null)
+                        {
+                            @( ((DBValueMeasurement)ei.planimetric.value).GetValue("0.####"))
                         }
+
                     </td>
                     <td class="planimetric-unit">
-                        @if (ei.planimetric != null)
-                        { @ei.planimetric.GetUnitMultiplier();
+                        @if (ei.planimetric != null && ei.planimetric.value != null)
+                        {
+                            @( ((DBValueMeasurement)ei.planimetric.value).GetUnitMultiplier())
                         }
                     </td>
                     <td class="pr-flow">
-                        @if (ei.pr_flow != null)
-                        { @ei.pr_flow.GetValue("n2");
+                        @if (ei.pr_flow != null && ei.pr_flow.value != null)
+                        {
+                            @( ((DBValueMeasurement)ei.pr_flow.value).GetValue("n2"))
                         }
                     </td>
                     <td class="pr-flow-unit">
-                        @if (ei.pr_flow != null)
-                        { @ei.pr_flow.GetUnitMultiplier();
+                        @if (ei.pr_flow != null && ei.pr_flow.value != null)
+                        {
+                            @( ((DBValueMeasurement)ei.pr_flow.value).GetUnitMultiplier())
                         }
                     </td>
                     <td class="time-norm">
-                        @if (ei.time_norm != null)
-                        { @ei.time_norm.GetValue("n0");
+                        @if (ei.time_norm != null && ei.time_norm.value != null)
+                        {
+                            @( ((DBValueMeasurement)ei.time_norm.value).GetValue("n0"))
                         }
                     </td>
                     <td class="time-norm-unit">
-                        @if (ei.time_norm != null)
-                        { @ei.time_norm.GetUnitMultiplier();
+                        @if (ei.time_norm != null && ei.time_norm.value != null)
+                        {
+                            @( ((DBValueMeasurement)ei.time_norm.value).GetUnitMultiplier())
                         }
                     </td>
                     <td class="time-max">
-                        @if (ei.time_max != null)
-                        { @ei.time_max.GetValue("n0");
+                        @if (ei.time_max != null && ei.time_max.value != null)
+                        {
+                            @( ((DBValueMeasurement)ei.time_max.value).GetValue("n0"))
                         }
                     </td>
                     <td class="time-max-unit">
-                        @if (ei.time_max != null)
-                        { @ei.time_max.GetUnitMultiplier();
+                        @if (ei.time_max != null && ei.time_max.value != null)
+                        {
+                            @( ((DBValueMeasurement)ei.time_max.value).GetUnitMultiplier())
                         }
                     </td>
                 </tr>
