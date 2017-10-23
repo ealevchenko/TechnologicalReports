@@ -117,6 +117,51 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="form_ed_caption" xml:space="preserve">
+    <value>Среднесуточные значения</value>
+  </data>
+  <data name="form_efd_caption" xml:space="preserve">
+    <value>Среднесуточные расходы</value>
+  </data>
+  <data name="form_efd_field_avgvalue" xml:space="preserve">
+    <value>Среднесуточные значения</value>
+  </data>
+  <data name="form_efd_field_flowday" xml:space="preserve">
+    <value>Расход за сутки</value>
+  </data>
+  <data name="form_efd_field_max" xml:space="preserve">
+    <value>Макс</value>
+  </data>
+  <data name="form_efd_field_name" xml:space="preserve">
+    <value>Наименование</value>
+  </data>
+  <data name="form_efd_field_norm" xml:space="preserve">
+    <value>Норма</value>
+  </data>
+  <data name="form_efd_field_object" xml:space="preserve">
+    <value>Агрегат</value>
+  </data>
+  <data name="form_efd_field_planometric" xml:space="preserve">
+    <value>Планим. число</value>
+  </data>
+  <data name="form_efd_field_preassure" xml:space="preserve">
+    <value>Давление</value>
+  </data>
+  <data name="form_efd_field_prflow" xml:space="preserve">
+    <value>Расход приведен.</value>
+  </data>
+  <data name="form_efd_field_temp" xml:space="preserve">
+    <value>Температура</value>
+  </data>
+  <data name="form_efd_field_time_norm" xml:space="preserve">
+    <value>Время подачи</value>
+  </data>
+  <data name="form_efd_field_unit" xml:space="preserve">
+    <value>Ед.изм.</value>
+  </data>
+  <data name="form_efd_field_value" xml:space="preserve">
+    <value>Значение</value>
+  </data>
   <data name="report_add_section" xml:space="preserve">
     <value>энергоресурсы АДД</value>
   </data>

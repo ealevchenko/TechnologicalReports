@@ -1,0 +1,170 @@
+﻿@using TReport.TRForms;
+@using Measurement;
+@using WebUI.App_LocalResources;
+
+@model Form
+
+<table class="table" id="table-flow-energy-day">
+    <caption>@ReportEnergyResource.form_efd_caption</caption>
+    <tr>
+        <th rowspan="3">@ReportEnergyResource.form_efd_field_name</th>
+        <th rowspan="3">@ReportEnergyResource.form_efd_field_object</th>
+        <th rowspan="2" colspan="2">@ReportEnergyResource.form_efd_field_flowday</th>
+        <th colspan="6">@ReportEnergyResource.form_efd_field_avgvalue</th>
+        <th rowspan="2" colspan="2">@ReportEnergyResource.form_efd_field_prflow</th>
+        <th colspan="4">@ReportEnergyResource.form_efd_field_time_norm</th>
+    </tr>
+    <tr>
+        <th colspan="2">@ReportEnergyResource.form_efd_field_temp</th>
+        <th colspan="2">@ReportEnergyResource.form_efd_field_preassure</th>
+        <th colspan="2">@ReportEnergyResource.form_efd_field_planometric</th>
+        <th colspan="2">@ReportEnergyResource.form_efd_field_norm</th>
+        <th colspan="2">@ReportEnergyResource.form_efd_field_max</th>
+    </tr>
+    <tr>
+        <th>@ReportEnergyResource.form_efd_field_unit</th>
+        <th>@ReportEnergyResource.form_efd_field_value</th>
+        <th>@ReportEnergyResource.form_efd_field_value</th>
+        <th>@ReportEnergyResource.form_efd_field_unit</th>
+        <th>@ReportEnergyResource.form_efd_field_value</th>
+        <th>@ReportEnergyResource.form_efd_field_unit</th>
+        <th>@ReportEnergyResource.form_efd_field_value</th>
+        <th>@ReportEnergyResource.form_efd_field_unit</th>
+        <th>@ReportEnergyResource.form_efd_field_value</th>
+        <th>@ReportEnergyResource.form_efd_field_unit</th>
+        <th>@ReportEnergyResource.form_efd_field_value</th>
+        <th>@ReportEnergyResource.form_efd_field_unit</th>
+        <th>@ReportEnergyResource.form_efd_field_value</th>
+        <th>@ReportEnergyResource.form_efd_field_unit</th>
+    </tr>
+    @foreach (Group groupitem in @Model.Groups.OrderBy(g => g.position))
+    {
+        <tr><th colspan="16">@groupitem.name.ToUpper()</th></tr>
+        foreach (TReport.TRForms.Type typeitem in groupitem.Types.OrderBy(t => t.position))
+        {
+            foreach (Item ei in typeitem.Items.OrderBy(i => i.position))
+            {
+                if (ei.ItemObjects.Count() > 0)
+                {
+                    <tr>
+                        <th class="name">@ei.name</th>
+                        <th class="Object">@ei.ItemObjects[0].Object</th>
+                        @foreach (Value val in @ei.ItemObjects[0].ItemValues[0].Values)
+                        {
+                            switch (val.position)
+                            {
+                                case 1:
+                                    {
+                                        <td class="flow-unit">
+                                            @if (val != null && val.value != null)
+                                            {
+                                                @( ((DBValueMeasurement)val.value).GetUnitMultiplier())
+                                            }
+                                        </td>
+                                        <td class="flow">
+                                            @if (val != null && val.value != null)
+                                            {
+                                                @( ((DBValueMeasurement)val.value).GetValue("n2"))
+                                            }
+                                        </td>
+                                    } break;
+                                case 2:
+                                    {
+                                        <td class="temp">
+                                            @if (val != null && val.value != null)
+                                            {
+                                                @( ((DBValueMeasurement)val.value).GetValue("n2"))
+                                            }
+                                        </td>
+                                        <td class="temp-unit">
+                                            @if (val != null && val.value != null)
+                                            {
+                                                @( ((DBValueMeasurement)val.value).GetUnitMultiplier())
+                                            }
+                                        </td>
+                                    } break;
+                                case 3:
+                                    {
+                                        <td class="pressure">
+                                            @if (val != null && val.value != null)
+                                            {
+                                                @( ((DBValueMeasurement)val.value).GetValue("n2"))
+                                            }
+                                        </td>
+                                        <td class="pressure-unit">
+                                            @if (val != null && val.value != null)
+                                            {
+                                                @( ((DBValueMeasurement)val.value).GetUnitMultiplier())
+                                            }
+                                        </td>
+                                    } break;
+                                case 4:
+                                    {
+                                        <td class="planimetric">
+                                            @if (val != null && val.value != null)
+                                            {
+                                                @( ((DBValueMeasurement)val.value).GetValue("0.####"))
+                                            }
+
+                                        </td>
+                                        <td class="planimetric-unit">
+                                            @if (val != null && val.value != null)
+                                            {
+                                                @( ((DBValueMeasurement)val.value).GetUnitMultiplier())
+                                            }
+                                        </td>
+                                    } break;
+                                case 5:
+                                    {
+                                        <td class="pr-flow">
+                                            @if (val != null && val.value != null)
+                                            {
+                                                @( ((DBValueMeasurement)val.value).GetValue("n2"))
+                                            }
+                                        </td>
+                                        <td class="pr-flow-unit">
+                                            @if (val != null && val.value != null)
+                                            {
+                                                @( ((DBValueMeasurement)val.value).GetUnitMultiplier())
+                                            }
+                                        </td>
+                                    } break;
+                                case 6:
+                                    {
+                                        <td class="time-norm">
+                                            @if (val != null && val.value != null)
+                                            {
+                                                @( ((DBValueMeasurement)val.value).GetValue("n0"))
+                                            }
+                                        </td>
+                                        <td class="time-norm-unit">
+                                            @if (val != null && val.value != null)
+                                            {
+                                                @( ((DBValueMeasurement)val.value).GetUnitMultiplier())
+                                            }
+                                        </td>
+                                    } break;
+                                case 7:
+                                    {
+                                        <td class="time-max">
+                                            @if (val != null && val.value != null)
+                                            {
+                                                @( ((DBValueMeasurement)val.value).GetValue("n0"))
+                                            }
+                                        </td>
+                                        <td class="time-max-unit">
+                                            @if (val != null && val.value != null)
+                                            {
+                                                @( ((DBValueMeasurement)val.value).GetUnitMultiplier())
+                                            }
+                                        </td>
+                                    } break;
+                                default: { } break;
+                            }
+                        }
+                    </tr>
+                }
+            }
+        }
+    }
+</table>

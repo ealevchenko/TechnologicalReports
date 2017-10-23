@@ -9,9 +9,11 @@ using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 using TReport.TData;
+using WebUI.Infrastructure;
 
 namespace WebUI.Controllers.BFS2
 {
+    [Access(LogVisit = true)]
     public class BFS2Controller : Controller
     {
 

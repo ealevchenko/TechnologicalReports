@@ -139,10 +139,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BF9UnloadBunkerResource.resx</DependentUpon>
     </Compile>
-    <Compile Include="App_LocalResources\EnergySutkiResource.Designer.cs">
+    <Compile Include="App_LocalResources\ReportEnergyResource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EnergySutkiResource.resx</DependentUpon>
+      <DependentUpon>ReportEnergyResource.resx</DependentUpon>
     </Compile>
     <Compile Include="App_LocalResources\BF9UnloadMaterialResource.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -288,7 +288,7 @@
     <Content Include="Views\BFS2\UnloadMaterialSmena.cshtml" />
     <Content Include="Views\BFS2\ReportUnloadMaterialSmena.cshtml" />
     <Content Include="SetupDB.config" />
-    <Content Include="Views\EnergyDay\ReportEnergyDay.cshtml" />
+    <Content Include="Views\EnergyDay\FormEnergyFlowDay.cshtml" />
     <Content Include="Views\Home\BFS2Energy.cshtml" />
     <Content Include="Views\EnergyDay\BFS2.cshtml" />
     <Content Include="Views\EnergyDay\ADD.cshtml" />
@@ -312,6 +312,8 @@
     <Content Include="Views\Home\BFS1.cshtml" />
     <Content Include="Views\Home\BFS1Energy.cshtml" />
     <Content Include="Views\EnergyDay\BFS1.cshtml" />
+    <Content Include="Views\EnergyDay\FormEnergyDay.cshtml" />
+    <Content Include="Views\EnergyDay\ReportEnergyDay.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -329,9 +331,9 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>BF9UnloadBunkerResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="App_LocalResources\EnergySutkiResource.resx">
+    <EmbeddedResource Include="App_LocalResources\ReportEnergyResource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>EnergySutkiResource.Designer.cs</LastGenOutput>
+      <LastGenOutput>ReportEnergyResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="App_LocalResources\BF9UnloadMaterialResource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

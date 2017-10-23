@@ -19,6 +19,7 @@ namespace WebUI.Controllers.Energy
         {
             return View();
         }
+
         public PartialViewResult EnergyDay(string title, DateTime date, trObj[] obj)
         {
             ViewBag.Title = title;
@@ -26,14 +27,45 @@ namespace WebUI.Controllers.Energy
             ViewBag.obj = obj;
             return PartialView();
         }
-
+        /// <summary>
+        /// Отчет потребления энергоресурсов АДД
+        /// </summary>
+        /// <param name="date"></param>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public PartialViewResult ReportEnergyDay(DateTime date, trObj[] obj)
+        {
+            ViewBag.dt = date.Date.ToShortDateString();
+            ViewBag.obj = obj;
+            return PartialView();
+        }
+
+        /// <summary>
+        /// Вывести форму отчета среднесуточные расходы
+        /// </summary>
+        /// <param name="date"></param>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public PartialViewResult FormEnergyFlowDay(DateTime date, trObj[] obj)
         {
 
             TREnergy tre = new TREnergy(obj);
             tre.GetEnergyFlowDay(date);
-            return PartialView(tre.ReportEnergyFlowDay);
+            return PartialView(tre.EnergyFlowDay);
         }
+        /// <summary>
+        /// Вывести форму отчета среднесуточные значения
+        /// </summary>
+        /// <param name="date"></param>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public PartialViewResult FormEnergyDay(DateTime date, trObj[] obj)
+        {
+            TREnergy tre = new TREnergy(obj);
+            tre.GetEnergyDay(date);
+            return PartialView(tre.EnergyDay);
+        }
+
 
         public ActionResult BFS2(string HierarchyMenu)
         {
