@@ -236,6 +236,7 @@
     <Content Include="Scripts\datetime\jquery-1.11.2.min.js" />
     <Content Include="Scripts\datetime\jquery.daterangepicker.js" />
     <Content Include="Scripts\datetime\moment.min.js" />
+    <Content Include="Scripts\helpers\lib-datetime.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-ui.js" />
@@ -288,7 +289,6 @@
     <Content Include="Views\BFS2\UnloadMaterialSmena.cshtml" />
     <Content Include="Views\BFS2\ReportUnloadMaterialSmena.cshtml" />
     <Content Include="SetupDB.config" />
-    <Content Include="Views\EnergyDay\FormEnergyFlowDay.cshtml" />
     <Content Include="Views\Home\BFS2Energy.cshtml" />
     <Content Include="Views\EnergyDay\BFS2.cshtml" />
     <Content Include="Views\EnergyDay\ADD.cshtml" />
@@ -312,8 +312,10 @@
     <Content Include="Views\Home\BFS1.cshtml" />
     <Content Include="Views\Home\BFS1Energy.cshtml" />
     <Content Include="Views\EnergyDay\BFS1.cshtml" />
-    <Content Include="Views\EnergyDay\FormEnergyDay.cshtml" />
     <Content Include="Views\EnergyDay\ReportEnergyDay.cshtml" />
+    <Content Include="Views\EnergyDay\ViewFormEnergyFlowDay.cshtml" />
+    <Content Include="Views\EnergyDay\ViewFormEnergyAVGDay.cshtml" />
+    <Content Include="Views\EnergyDay\ViewFormEnergyGranulDay.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

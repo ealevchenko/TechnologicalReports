@@ -88,11 +88,29 @@ namespace WebUI.App_LocalResources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Общий.
+        /// </summary>
+        public static string form_efd_field_common {
+            get {
+                return ResourceManager.GetString("form_efd_field_common", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Расход за сутки.
         /// </summary>
         public static string form_efd_field_flowday {
             get {
                 return ResourceManager.GetString("form_efd_field_flowday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на ЛГУ.
+        /// </summary>
+        public static string form_efd_field_leftgranul {
+            get {
+                return ResourceManager.GetString("form_efd_field_leftgranul", resourceCulture);
             }
         }
         
@@ -160,6 +178,15 @@ namespace WebUI.App_LocalResources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на ПГУ.
+        /// </summary>
+        public static string form_efd_field_rightgranul {
+            get {
+                return ResourceManager.GetString("form_efd_field_rightgranul", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Температура.
         /// </summary>
         public static string form_efd_field_temp {
@@ -192,6 +219,15 @@ namespace WebUI.App_LocalResources {
         public static string form_efd_field_value {
             get {
                 return ResourceManager.GetString("form_efd_field_value", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Придоменная грануляция шлака.
+        /// </summary>
+        public static string form_egd_caption {
+            get {
+                return ResourceManager.GetString("form_egd_caption", resourceCulture);
             }
         }
         

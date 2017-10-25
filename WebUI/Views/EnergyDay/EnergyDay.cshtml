@@ -1,4 +1,6 @@
 ﻿@using WebUI.App_LocalResources;
+@using TReport.TData;
+@using TReport.TREntities;
 
 @{
     AjaxOptions ajaxOpts = new AjaxOptions
@@ -12,12 +14,12 @@
 }
 
 @{
-    TReport.TData.trObj[] obj = @ViewBag.obj;
+    trObj[] obj = @ViewBag.obj;
+    TREnergy.Report[] reports = @ViewBag.reports;
 }
 
 @Scripts.Render("~/bundles/Ajax")
 @Scripts.Render("~/bundles/jqueryval")
-<script src="~/Scripts/jquery.cookie.js"></script>
 <div id="report" class="report-wide">
     <div id="header">
         <div class="title">@ViewBag.Title</div>
@@ -34,6 +36,10 @@
                     {
                         <input name="obj" id="obj" type="hidden" value='@ob.ToString()'>
                     }
+                    @foreach (TREnergy.Report rep in reports.ToList())
+                    {
+                        <input name="reports" id="reports" type="hidden" value='@rep.ToString()'>
+                    }
                 </span>
                 <button type="button" id="button-next">@GlobalResource.button_title_next</button>
             </div>
@@ -41,13 +47,14 @@
     </div>
     <link rel="stylesheet" type="text/css" href="~/Content/reports/energy/energy.css">
     <div id="content">
-        @{ Html.RenderAction("ReportEnergyDay", "EnergyDay", new { date = @DateTime.Parse(@ViewBag.dt), obj = @ViewBag.obj }); }
+        @{ Html.RenderAction("ReportEnergyDay", "EnergyDay", new { date = @DateTime.Parse(@ViewBag.dt), obj = @ViewBag.obj, reports = @ViewBag.reports }); }
     </div>
     <div id="cls">
 
     </div>
 </div>
-@Styles.Render("~/table/css")
-@Scripts.Render("~/bundles/table")
+@*@Styles.Render("~/table/css")
+@Scripts.Render("~/bundles/table")*@
 <script src="~/Scripts/reports/energy/energy.js"></script>
+
 

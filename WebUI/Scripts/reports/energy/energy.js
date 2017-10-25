@@ -1,6 +1,7 @@
-﻿$(document).ready(function () {
+﻿
+$(document).ready(function () {
 
-    //$('#table-average-daily-expenses').DataTable({
+    //$('#table-flow-energy-day').DataTable({
     //    "paging": false,
     //    "ordering": false,
     //    "info": false
@@ -36,45 +37,23 @@
 
         function () {
             var date = $('input#date').val();
-            var dateArray = (myVar == 'en' ? date.split('/') : date.split('.'));
-            var Day = (myVar == 'en' ? dateArray[1] : dateArray[0])
-            var Month = (myVar == 'en' ? dateArray[0] : dateArray[1])
-            var Year = dateArray[2];
-            var D = new Date(Year, Month, Day);
-            D.setDate(D.getDate() - 1);
-            var d = D.getDate();
-            var sd = d.toString();
-            if (d < 10) { sd = "0" + sd; }
-            var m = D.getMonth();
-            var sm = m.toString();
-            if (m < 10) { var sm = "0" + sm; }
-            var y = D.getFullYear();
-            var datenow = (myVar == 'en' ? sm + '/' + sd + '/' + D.getFullYear() : sd + '.' + sm + '.' + D.getFullYear())
+            var datenow = SubDay(date);
             $('input#date').val(datenow);
             $('form#fmList').submit(); // Отправить форму
-        });
+        }
+
+        );
     // Нажата кнопка вперед
     $('#button-next').click(
 
         function () {
             var date = $('input#date').val();
-            var dateArray = (myVar == 'en' ? date.split('/') : date.split('.'));
-            var Day = (myVar == 'en' ? dateArray[1] : dateArray[0])
-            var Month = (myVar == 'en' ? dateArray[0] : dateArray[1])
-            var Year = dateArray[2];
-            var D = new Date(Year, Month, Day);
-            D.setDate(D.getDate() + 1);
-            var d = D.getDate();
-            var sd = d.toString();
-            if (d < 10) { sd = "0" + sd; }
-            var m = D.getMonth();
-            var sm = m.toString();
-            if (m < 10) { var sm = "0" + sm; }
-            var y = D.getFullYear();
-            var datenow = (myVar == 'en' ? sm + '/' + sd + '/' + D.getFullYear() : sd + '.' + sm + '.' + D.getFullYear())
+            var datenow = AddDay(date);
             $('input#date').val(datenow);
             $('form#fmList').submit(); // Отправить форму
-        });
+        }
+
+        );
 
     //валидация
     $(function () {
@@ -105,6 +84,22 @@
             $('form#fmList').validate().element($(e.target));
         });
     });
+
+    // открывающиеся панели
+    $(function () {
+        $('a.show-detali-object').click(function (evt) {
+            evt.preventDefault();
+            $(this).siblings('.detali-object').slideToggle();
+            var id = $(this).attr("id");
+            var style = $.cookie(id);
+            if (style == null | style == 'display: none;') {
+                $.cookie(id, 'display: block;');
+            } else
+            { $.cookie(id, 'display: none;'); }
+
+        });
+    })
+
 });
 
 function selectPeriod(data) {
@@ -113,11 +108,32 @@ function selectPeriod(data) {
     var target = $("#content");
     target.empty();
     target.append(data);
-    //$('#table-average-daily-expenses').DataTable({
+
+    //$('#table-flow-energy-day').DataTable({
     //    "paging": false,
     //    "ordering": false,
     //    "info": false
     //});
+
+    // Открывающиеся панели
+    var flow = $.cookie('flow-day');
+    $('a#flow-day').siblings('.detali-object').attr('style', flow);
+    var avg = $.cookie('avg-day');
+    $('a#avg-day').siblings('.detali-object').attr('style', avg);
+    var granul = $.cookie('granul-day');
+    $('a#granul-day').siblings('.detali-object').attr('style', granul);
+    $(function () {
+        $('a.show-detali-object').click(function (evt) {
+            evt.preventDefault();
+            $(this).siblings('.detali-object').slideToggle();
+            var id = $(this).attr("id");
+            var style = $.cookie(id);
+            if (style == null | style == 'display: none;') {
+                $.cookie(id, 'display: block;');
+            } else { $.cookie(id, 'display: none;'); }
+        });
+    })
+
 }
 
 function OnBegin() {

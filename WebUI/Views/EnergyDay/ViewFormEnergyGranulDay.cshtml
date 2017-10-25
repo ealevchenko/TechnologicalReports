@@ -1,0 +1,66 @@
+﻿@using TReport.TRForms;
+@using Measurement;
+@using WebUI.App_LocalResources;
+
+@model Form
+<a href="#" id="granul-day" class="show-detali-object a-show-detali">@ReportEnergyResource.form_egd_caption</a>
+<div class="status detali-object">
+    <table class="table_blur" id="table-flow-energy-day">
+        @*<caption>@ReportEnergyResource.form_egd_caption</caption>*@
+        <tr>
+            <th>@ReportEnergyResource.form_efd_field_name</th>
+            <th>@ReportEnergyResource.form_efd_field_unit</th>
+            <th>@ReportEnergyResource.form_efd_field_leftgranul</th>
+            <th>@ReportEnergyResource.form_efd_field_rightgranul</th>
+            <th>@ReportEnergyResource.form_efd_field_common</th>
+        </tr>
+        @foreach (Group groupitem in @Model.Groups.OrderBy(g => g.position))
+        {
+            foreach (TReport.TRForms.Type typeitem in groupitem.Types.OrderBy(t => t.position))
+            {
+                foreach (Item ei in typeitem.Items.OrderBy(i => i.position))
+                {
+                    if (ei.ItemObjects.Count() > 0)
+                    {
+                        <tr>
+                            <th class="name">@ei.name</th>
+
+                            @foreach (Value val in @ei.ItemObjects[0].ItemValues[0].Values)
+                            {
+                                switch (val.position)
+                                {
+                                    case 1:
+                                        {
+                                            <td class="unit">
+                                                @if (val != null && val.value != null)
+                                                {
+                                                    @( ((DBValueMeasurement)val.value).GetUnitMultiplier())
+                                                }
+                                            </td>
+                                            <td class="value">
+                                                @if (val != null && val.value != null)
+                                                {
+                                                    @( ((DBValueMeasurement)val.value).GetValue("n2"))
+                                                }
+                                            </td>
+                                        } break;
+                                    case 2:
+                                        {
+                                            <td class="value">
+                                                @if (val != null && val.value != null)
+                                                {
+                                                    @( ((DBValueMeasurement)val.value).GetValue("n2"))
+                                                }
+                                            </td>
+                                        } break;
+                                    default: { } break;
+                                }
+                            }
+                            <td></td>
+                        </tr>
+                    }
+                }
+            }
+        }
+    </table>
+</div>

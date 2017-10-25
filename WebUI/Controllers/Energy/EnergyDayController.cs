@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using TReport.TData;
 using TReport.TREntities;
+using TReport.TRForms;
 using WebUI.Infrastructure;
 
 namespace WebUI.Controllers.Energy
@@ -20,11 +21,12 @@ namespace WebUI.Controllers.Energy
             return View();
         }
 
-        public PartialViewResult EnergyDay(string title, DateTime date, trObj[] obj)
+        public PartialViewResult EnergyDay(string title, DateTime date, trObj[] obj, TREnergy.Report[] reports)
         {
             ViewBag.Title = title;
             ViewBag.dt = date.Date.ToShortDateString();
             ViewBag.obj = obj;
+            ViewBag.reports = reports;
             return PartialView();
         }
         /// <summary>
@@ -33,39 +35,42 @@ namespace WebUI.Controllers.Energy
         /// <param name="date"></param>
         /// <param name="obj"></param>
         /// <returns></returns>
-        public PartialViewResult ReportEnergyDay(DateTime date, trObj[] obj)
+        public PartialViewResult ReportEnergyDay(DateTime date, trObj[] obj, TREnergy.Report[] reports)
         {
-            ViewBag.dt = date.Date.ToShortDateString();
-            ViewBag.obj = obj;
-            return PartialView();
-        }
-
-        /// <summary>
-        /// Вывести форму отчета среднесуточные расходы
-        /// </summary>
-        /// <param name="date"></param>
-        /// <param name="obj"></param>
-        /// <returns></returns>
-        public PartialViewResult FormEnergyFlowDay(DateTime date, trObj[] obj)
-        {
-
-            TREnergy tre = new TREnergy(obj);
-            tre.GetEnergyFlowDay(date);
-            return PartialView(tre.EnergyFlowDay);
+            TREnergy tre = new TREnergy(obj,reports);
+            tre.GetReports(date);
+            return PartialView(tre.ReportForms);
         }
         /// <summary>
-        /// Вывести форму отчета среднесуточные значения
+        /// Показать форму отчета расходы за сутки
         /// </summary>
-        /// <param name="date"></param>
-        /// <param name="obj"></param>
+        /// <param name="form"></param>
         /// <returns></returns>
-        public PartialViewResult FormEnergyDay(DateTime date, trObj[] obj)
+        public PartialViewResult ViewFormEnergyFlowDay(Form form)
         {
-            TREnergy tre = new TREnergy(obj);
-            tre.GetEnergyDay(date);
-            return PartialView(tre.EnergyDay);
+            if (form == null) return null;
+            return PartialView(form);
         }
-
+        /// <summary>
+        /// Показать форму отчета среднесуточные
+        /// </summary>
+        /// <param name="form"></param>
+        /// <returns></returns>
+        public PartialViewResult ViewFormEnergyAVGDay(Form form)
+        {
+            if (form == null) return null;
+            return PartialView(form);
+        }
+        /// <summary>
+        /// Показать форму отчета грануляция
+        /// </summary>
+        /// <param name="form"></param>
+        /// <returns></returns>
+        public PartialViewResult ViewFormEnergyGranulDay(Form form)
+        {
+            if (form == null) return null;
+            return PartialView(form);
+        }
 
         public ActionResult BFS2(string HierarchyMenu)
         {

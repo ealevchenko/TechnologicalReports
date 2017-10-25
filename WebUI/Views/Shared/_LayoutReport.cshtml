@@ -13,14 +13,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @Styles.Render("~/Layout-report/css")
+
     <link rel="stylesheet" type="text/css" href="~/Content/layout-report/styleIE.css" />
     <!--<link href='http://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css' />-->
     @Scripts.Render("~/bundles/jquery")
+    <script src="~/Scripts/jquery.cookie.js"></script>
 </head>
 <body style="background-image: url(@ViewBag.URL), url(); background-repeat: no-repeat; background-size:cover;">
     <link rel="stylesheet" type="text/css" href="~/Content/lockpanel/lockpanel.css">
     <script src="~/Scripts/lockpanel/lockpanel.js"></script>
     <div id="lockPanel" class="LockOff"></div>
+
+
     <div class="container">
         <div class="header">
             @*@Html.RouteLink(, new { controller = "Home", action = "Index")*@
@@ -51,8 +55,8 @@
                             }, new { @class = "uk-UA" == System.Threading.Thread.CurrentThread.CurrentCulture.Name ? "select-lang" : "select-not-lang" })
                 }
                 @*<a href="mailto:Eduard.Levchenko@arcelormittal.com">
-                        <strong>@GlobalResource.name_developers_admin</strong>
-                    </a>*@
+                    <strong>@GlobalResource.name_developers_admin</strong>
+                </a>*@
             </span>
             <div class="clr"></div>
         </div>

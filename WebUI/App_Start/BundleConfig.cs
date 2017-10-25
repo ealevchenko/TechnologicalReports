@@ -57,6 +57,7 @@ namespace WebUI
                 .Include(
                  "~/Scripts/datetime/moment.min.js"
                 , "~/Scripts/datetime/jquery.daterangepicker.js"
+                , "~/Scripts/helpers/lib-datetime.js"
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/Ajax").Include(

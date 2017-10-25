@@ -19,3 +19,4 @@
 /// <reference path="reports/energy/energy.js" />
 /// <reference path="table/jquery.datatables.min.js" />
 /// <reference path="table/datatables.jqueryui.min.js" />
+/// <reference path="helpers/lib-datetime.js" />

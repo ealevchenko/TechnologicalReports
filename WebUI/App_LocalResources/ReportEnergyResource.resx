@@ -126,8 +126,14 @@
   <data name="form_efd_field_avgvalue" xml:space="preserve">
     <value>Среднесуточные значения</value>
   </data>
+  <data name="form_efd_field_common" xml:space="preserve">
+    <value>Общий</value>
+  </data>
   <data name="form_efd_field_flowday" xml:space="preserve">
     <value>Расход за сутки</value>
+  </data>
+  <data name="form_efd_field_leftgranul" xml:space="preserve">
+    <value>ЛГУ</value>
   </data>
   <data name="form_efd_field_max" xml:space="preserve">
     <value>Макс</value>
@@ -150,6 +156,9 @@
   <data name="form_efd_field_prflow" xml:space="preserve">
     <value>Расход приведен.</value>
   </data>
+  <data name="form_efd_field_rightgranul" xml:space="preserve">
+    <value>ПГУ</value>
+  </data>
   <data name="form_efd_field_temp" xml:space="preserve">
     <value>Температура</value>
   </data>
@@ -161,6 +170,9 @@
   </data>
   <data name="form_efd_field_value" xml:space="preserve">
     <value>Значение</value>
+  </data>
+  <data name="form_egd_caption" xml:space="preserve">
+    <value>Придоменная грануляция шлака</value>
   </data>
   <data name="report_add_section" xml:space="preserve">
     <value>энергоресурсы АДД</value>

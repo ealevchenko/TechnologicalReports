@@ -1,5 +1,5 @@
 ﻿.content {
-    width:auto
+    width: auto;
 }
 
 .report-wide {
@@ -8,133 +8,164 @@
     width: 1500px;
 }
 
-#table-flow-energy-day table
-{
-    font-size:16px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    border: 1px solid #808080;
-    width: auto;
-    color: #000000;
-    border-spacing: 1px;
-    border-radius: 3px;
-    background-color: #F7F6F3;    
+.table_blur {
+    background: #f5ffff;
+    /*border-collapse: collapse;*/
+    text-align: left;
 }
 
-#table-flow-energy-day caption {
-    font-variant: small-caps;
-    width: 100%;
-    color: #000099;
-    border-spacing: 3px;
-    border-radius: 3px;
-    background-color: #CCCCCC;
-    font-weight: normal;
-    font-size: large;
-    font-family: Arial, Helvetica, sans-serif;
-}
+    .table_blur th {
+        box-shadow: inset 0 1px 0 #999999, inset 0 -1px 0 #999999;
+        background:#8ae;
+        color: white;
+        padding: 5px 5px;
+        position: relative;
+    }
 
-#table-flow-energy-day th
-{
-    border: 1px solid #000000; border-radius: 3px;
-    color: #FFFFFF;
-    border-spacing: 3px;
-    background-color: #00547E;
-    font-weight: bold;
-    font-size: larger;
-}
+        .table_blur th:after {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 25%;
+            height: 25%;
+            width: 100%;
+            background: linear-gradient(rgba(255, 255, 255, 0), rgba(255,255,255,.08));
+        }
 
-#table-flow-energy-day td
-{
-    border: 1px solid #000000; border-radius: 3px;
-    color: #000000;
-    border-spacing: 2px;
+    .table_blur tr:nth-child(odd) {
+        background: #ebf3f9;
+    }
+
+    .table_blur th:first-child {
+        box-shadow: inset 1px 1px 0 #999999, inset 0 -1px 0 #999999;
+    }
+
+    .table_blur th:last-child {
+        box-shadow: inset -1px 1px 0 #999999, inset 0 -1px 0 #999999;
+    }
+
+    .table_blur td {
+        border: 1px solid #e3eef7;
+        padding: 5px 5px;
+        position: relative;
+        transition: all 0.5s ease;
+    }
+
+    .table_blur td.flow, td.avg, td.time {
+            text-align:right;
+            font-weight:600;
+     }
+
+    /*.table_blur tbody:hover td {
+        color: transparent;
+        text-shadow: 0 0 3px #a09f9d;
+    }
+
+    .table_blur tbody:hover tr:hover td {
+        color: #444444;
+        text-shadow: none;
+    }*/
+
+
+.table_2 {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    /*font-size: 14px;*/
+    border-collapse: collapse;
     text-align: center;
 }
 
-#table-flow-energy-day th.name {
-    font-weight: bold;
-    font-size: larger;
+    .table_2 th {
+        /*background: #AFCDE7;*/
+        background: #8ae;
+        color: white;
+        padding: 5px 5px;
+    }
+
+        .table_2 th.group {
+            text-align: center;
+        }
+
+    .table_2 th, .table_2 td {
+        border-style: solid;
+        border-width: 0 1px 1px 0;
+        border-color: white;
+    }
+
+    .table_2 td {
+        border-radius: 10px;
+        background: #D8E6F3;
+        padding: 5px 5px;
+    }
+
+        .table_2 td.unit {
+            background: rgba(144,144,144,0.15);
+            /*background: rgba(144,144,144,0.15);*/
+            border-right: 1px solid white;
+        }
+
+        .table_2 td.flow {
+            background: rgba(184,243,85,0.3);
+            text-align:right
+        }
+
+        .table_2 td.avg {
+            background: rgba(136, 170, 238, 0.30)
+            text-align:right
+        }
+
+/*Строка детально service-status*/
+
+.a-show-detali {
+    /*border: 0;*/
+    /*border-radius: 300px;*/
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+    font-weight: 700;
+    color: #666;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 1.428571429;
     text-align: center;
-    width: 240px;
-}
-#table-flow-energy-day th.Object {
-    font-weight: bold;
-    font-size: larger;
-    text-align: center;
-    width: 80px;
-}
-#table-flow-energy-day td.flow-init
-{
-    text-align: center;
-    width: 70px;
-}
-#table-flow-energy-day td.flow {
-    text-align: right;
-    width: 60px;
-    background-color: #CCFF99;
-}
-#table-flow-energy-day td.temp {
-    text-align: right;
-    width: 60px;
-    background-color: #99CCFF;
-}
-#table-flow-energy-day td.temp-unit
-{
-    text-align:center;
-    width: 70px;
-}
-#table-flow-energy-day td.pressure
-{
-    text-align: right;
-    width: 60px;
-    background-color: #99CCFF;
-}
-#table-flow-energy-day td.pressure-unit
-{
-    text-align:center;
-    width: 70px;
-}
-#table-flow-energy-day td.planimetric
-{
-    text-align: right;
-    width: 60px;
-    background-color: #99CCFF;
-}
-#table-flow-energy-day td.planimetric-unit
-{
-    text-align:center;
-    width: 70px;
-}
-#table-flow-energy-day td.pr-flow
-{
-    text-align: right;
-    width: 60px;
-    background-color: #CCFF99;
-}
-#table-flow-energy-day td.pr-flow-unit
-{
-    text-align:center;
-    width: 70px;
-}
-#table-flow-energy-day td.time-norm {
-    text-align: right;
-    width: 60px;
-    background-color: #FFFFCC;
-}
-#table-flow-energy-day td.time-norm-unit
-{
-    text-align:center;
-    width: 70px;
-}
-#table-flow-energy-day td.time-max
-{
-    text-align: right;
-    width: 60px;
-    background-color: #FFFFCC;
-}
-#table-flow-energy-day td.time-max-unit
-{
-    text-align:center;
-    width: 70px;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 
- 
+    .a-show-detali:hover {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #111;
+    }
+
+    .a-show-detali:focus {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #111;
+    }
+
+    .a-show-detali:active {
+        text-transform: uppercase;
+        color: #111;
+    }
+
+.detali-object {
+    display: none;
+    border-left: 6px solid #8ae;
+    border-top: 1px solid #8ae;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    background-color: #eee;
+    border-radius: 4px;
+}

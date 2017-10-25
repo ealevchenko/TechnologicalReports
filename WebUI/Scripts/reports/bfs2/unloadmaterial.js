@@ -30,20 +30,7 @@
 
         function () {
             var date = $('input#date').val();
-            var dateArray = (myVar == 'en' ? date.split('/') : date.split('.'));
-            var Day = (myVar == 'en' ? dateArray[1] : dateArray[0])
-            var Month = (myVar == 'en' ? dateArray[0] : dateArray[1])
-            var Year = dateArray[2];
-            var D = new Date(Year, Month, Day);
-            D.setDate(D.getDate() - 1);
-            var d = D.getDate();
-            var sd = d.toString();
-            if (d < 10) { sd = "0" + sd; }
-            var m = D.getMonth();
-            var sm = m.toString();
-            if (m < 10) { var sm = "0" + sm; }
-            var y = D.getFullYear();
-            var datenow = (myVar == 'en' ? sm + '/' + sd + '/' + D.getFullYear() : sd + '.' + sm + '.' + D.getFullYear())
+            var datenow = SubDay(date);
             $('input#date').val(datenow);
             $('form#fmList').submit(); // Отправить форму
         });
@@ -52,20 +39,7 @@
 
         function () {
             var date = $('input#date').val();
-            var dateArray = (myVar == 'en' ? date.split('/') : date.split('.'));
-            var Day = (myVar == 'en' ? dateArray[1] : dateArray[0])
-            var Month = (myVar == 'en' ? dateArray[0] : dateArray[1])
-            var Year = dateArray[2];
-            var D = new Date(Year, Month, Day);
-            D.setDate(D.getDate() + 1);
-            var d = D.getDate();
-            var sd = d.toString();
-            if (d < 10) { sd = "0" + sd; }
-            var m = D.getMonth();
-            var sm = m.toString();
-            if (m < 10) { var sm = "0" + sm; }
-            var y = D.getFullYear();
-            var datenow = (myVar == 'en' ? sm + '/' + sd + '/' + D.getFullYear() : sd + '.' + sm + '.' + D.getFullYear())
+            var datenow = AddDay(date);
             $('input#date').val(datenow);
             $('form#fmList').submit(); // Отправить форму
         });

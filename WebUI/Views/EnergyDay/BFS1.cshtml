@@ -8,5 +8,7 @@
 }
 @{
     TReport.TData.trObj[] obj = new TReport.TData.trObj[] { TReport.TData.trObj.dc1_dp6, TReport.TData.trObj.dc1_dp7, TReport.TData.trObj.dc1_dp8 };
+    TReport.TREntities.TREnergy.Report[] reports = new TReport.TREntities.TREnergy.Report[] { TReport.TREntities.TREnergy.Report.EnergyFlowDay, TReport.TREntities.TREnergy.Report.EnergyAVGDay};
+
 }
-@{ Html.RenderAction("EnergyDay", "EnergyDay", new { title = @ViewBag.Title, date = @DateTime.Parse(@ViewBag.dt), obj }); }
+@{ Html.RenderAction("EnergyDay", "EnergyDay", new { title = @ViewBag.Title, date = @DateTime.Parse(@ViewBag.dt), obj, reports }); }
