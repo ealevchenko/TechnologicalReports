@@ -24,39 +24,42 @@
                     {
                         <tr>
                             <th class="name">@ei.name</th>
+                            @{
+                        DBValueMeasurement val_left = null;
+                        DBValueMeasurement val_right = null;
+                        DBValueMeasurement val_comm = null;
+                        int count = ei.ItemObjects[0].ItemValues[0].Values.Count();
+                        int index = 0;
+                        while (index < count)
+                        {
+                            if (index == 0) { val_left = (DBValueMeasurement)ei.ItemObjects[0].ItemValues[0].Values[index].value; }
+                            if (index == 1) { val_right = (DBValueMeasurement)ei.ItemObjects[0].ItemValues[0].Values[index].value; }
+                            if (index == 2) { val_comm = (DBValueMeasurement)ei.ItemObjects[0].ItemValues[0].Values[index].value; }
+                            index++;
+                        }
+                        <td class="unit">
+                            @( val_left.GetUnitMultiplier())
+                        </td>
+                        if (val_left == null || val_right == null)
+                        {
 
-                            @foreach (Value val in @ei.ItemObjects[0].ItemValues[0].Values)
-                            {
-                                switch (val.position)
-                                {
-                                    case 1:
-                                        {
-                                            <td class="unit">
-                                                @if (val != null && val.value != null)
-                                                {
-                                                    @( ((DBValueMeasurement)val.value).GetUnitMultiplier())
-                                                }
-                                            </td>
-                                            <td class="value">
-                                                @if (val != null && val.value != null)
-                                                {
-                                                    @( ((DBValueMeasurement)val.value).GetValue("n2"))
-                                                }
-                                            </td>
-                                        } break;
-                                    case 2:
-                                        {
-                                            <td class="value">
-                                                @if (val != null && val.value != null)
-                                                {
-                                                    @( ((DBValueMeasurement)val.value).GetValue("n2"))
-                                                }
-                                            </td>
-                                        } break;
-                                    default: { } break;
-                                }
+                            <td class="value" colspan="2">
+                                @( val_left.GetValue("n2"))
+                            </td>
+                        }
+                        else
+                        {
+                            <td class="value">
+                                @( val_left.GetValue("n2"))
+                            </td>
+                                <td class="value">
+                                    @( val_right.GetValue("n2"))
+                                </td>
+                        }
+                        <td class="value">
+                            @( val_comm != null ? val_comm.GetValue("n2") : null)
+                        </td>
                             }
-                            <td></td>
                         </tr>
                     }
                 }

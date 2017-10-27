@@ -6,26 +6,29 @@
 <a href="#" id="avg-day" class="show-detali-object a-show-detali">@ReportEnergyResource.form_ed_caption</a>
 <div class="status detali-object">
     <table class="table_blur" id="table-flow-energy-day">
-        @*<caption>@ReportEnergyResource.form_ed_caption</caption>*@
+        <tr>
+            <th rowspan="2">@ReportEnergyResource.form_efd_field_name</th>
+            @foreach (ItemObject io in @Model.Groups[0].Types[0].Items[0].ItemObjects.OrderBy(o => o.trobj))
+            {
+                <th colspan="2">@io.Object</th>
+            }
+        </tr>
+        <tr>
+            @foreach (ItemObject io in @Model.Groups[0].Types[0].Items[0].ItemObjects.OrderBy(o => o.trobj))
+            {
+                <th>@ReportEnergyResource.form_efd_field_value</th>
+                <th>@ReportEnergyResource.form_efd_field_unit</th>
+            }
+        </tr>
+        @{ int count = (@Model.Groups[0].Types[0].Items[0].ItemObjects.Count()*2) + 1;
+           //double counts = 0;
+           }
         @foreach (Group groupitem in @Model.Groups.OrderBy(g => g.position))
         {
+            <tr><th colspan='@count' class="group">@groupitem.name.ToUpper()</th></tr>
             foreach (TReport.TRForms.Type typeitem in groupitem.Types.OrderBy(t => t.position))
             {
-                <tr>
-                    <th rowspan="2">@ReportEnergyResource.form_efd_field_name</th>
-                    @foreach (ItemObject io in typeitem.Items[0].ItemObjects.OrderBy(o => o.trobj))
-                    {
-                        <th colspan="2">@io.Object</th>
-                    }
-                </tr>
-                <tr>
-                    @foreach (ItemObject io in typeitem.Items[0].ItemObjects.OrderBy(o => o.trobj))
-                    {
-                        <th>@ReportEnergyResource.form_efd_field_value</th>
-                        <th>@ReportEnergyResource.form_efd_field_unit</th>
-                    }
-                </tr>
-                <tr><th colspan='@( (@typeitem.Items[0].ItemObjects.Count()*2)+1)'>@groupitem.name.ToUpper()</th></tr>
+                <tr><th colspan='@count' class="type">@typeitem.name.ToUpper()</th></tr>
                 foreach (Item ei in typeitem.Items.OrderBy(i => i.position))
                 {
                     <tr>
@@ -36,6 +39,8 @@
                                 @if (io.ItemValues[0].Values[0].value != null)
                                 {
                                     @( ((DBValueMeasurement)io.ItemValues[0].Values[0].value).GetValue("n3"))
+                                    //object oval = ((DBValueMeasurement)io.ItemValues[0].Values[0].value).Value;
+                                    //counts += oval != null ? (double)(object)oval : 0;
                                 }
                             </td>
                             <td class="unit">
@@ -44,11 +49,28 @@
                                     @( ((DBValueMeasurement)io.ItemValues[0].Values[0].value).GetUnitMultiplier())
                                 }
                             </td>
-
                         }
                     </tr>
-
+                    @*<tr>
+                        <th>ИТОГО @typeitem.name:</th>
+                        @foreach (ItemObject io in ei.ItemObjects.OrderBy(o => o.trobj))
+                        {
+                            <td class="value">
+                                @if (io.ItemValues[0].Values[0].value != null)
+                                {
+                                    @counts
+                                }
+                            </td>
+                            <td class="unit">
+                                @if (io.ItemValues[0].Values[0].value != null)
+                                {
+                                    @( ((DBValueMeasurement)io.ItemValues[0].Values[0].value).GetUnitMultiplier())
+                                }
+                            </td>
+                        }
+                    </tr>*@
                 }
+                
             }
         }
     </table>

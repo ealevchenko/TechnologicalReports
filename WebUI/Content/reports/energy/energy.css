@@ -52,7 +52,7 @@
         transition: all 0.5s ease;
     }
 
-    .table_blur td.flow, td.avg, td.time {
+    .table_blur td.flow, td.avg, td.time, td.value {
             text-align:right;
             font-weight:600;
      }
