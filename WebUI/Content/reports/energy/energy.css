@@ -56,6 +56,9 @@
             text-align:right;
             font-weight:600;
      }
+        .table_blur td.totals {
+            background: rgba(184,243,85,0.3);
+        }
 
     /*.table_blur tbody:hover td {
         color: transparent;
