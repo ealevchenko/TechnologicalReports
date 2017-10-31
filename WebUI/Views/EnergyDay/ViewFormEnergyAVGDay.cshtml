@@ -6,7 +6,7 @@
 @model Form
 <a href="#" id="avg-day" class="show-detali-object a-show-detali">@ReportEnergyResource.form_ed_caption</a>
 <div class="status detali-object">
-    <table class="table_blur" id="table-flow-energy-day">
+    <table class="table_blur" id="table-energy-avg-day">
         <tr>
             <th rowspan="2">@ReportEnergyResource.form_efd_field_name</th>
             @foreach (ItemObject io in @Model.Groups[0].Types[0].Items[0].ItemObjects.OrderBy(o => o.trobj))
@@ -46,6 +46,7 @@
                                 @if (io.ItemValues[0].Values[0].value != null)
                                 {
                                     @( ((DBValueMeasurement)io.ItemValues[0].Values[0].value).GetValue("n3"))
+                                      @*@io.ItemValues[0].SumValue(1).ToString("0.###");*@ 
                                 }
                             </td>
                             <td class="unit">

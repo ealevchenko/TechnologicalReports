@@ -2,33 +2,55 @@
 @using TReport.TREntities;
 
 @model List<Form>
-<table>
-@foreach (var item in Model)
-{
-    if (item.name == TREnergy.Report.EnergyFlowDay.ToString())
-    {
-        <tr>
-            <td>
-                @{ Html.RenderAction("ViewFormEnergyFlowDay", "EnergyDay", new { form = (Form)item});}
-            </td>
-        </tr>
-    }
-    if (item.name == TREnergy.Report.EnergyAVGDay.ToString())
-    {
-        <tr>
-            <td>
-                @{ Html.RenderAction("ViewFormEnergyAVGDay", "EnergyDay", new { form = (Form)item });}
-            </td>
-        </tr>
 
-    }
-    if (item.name == TREnergy.Report.EnergyGranulDay.ToString())
+<table>
+    @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @{ Html.RenderAction("ViewFormEnergyGranulDay", "EnergyDay", new { form = (Form)item });}
-            </td>
-        </tr>
+        if (item.name == TREnergy.Report.EnergyFlowDay.ToString())
+        {
+            <tr>
+                <td>
+                    <img src="~/Images/toolbar/print.png" width="32" height="32" alt="Печать" onclick="PrintWindow('table-flow-energy-day');" />
+                    @{ Html.RenderAction("ViewFormEnergyFlowDay", "EnergyDay", new { form = (Form)item });}
+                </td>
+            </tr>
+        }
+        if (item.name == TREnergy.Report.EnergyAVGDay.ToString())
+        {
+            <tr>
+                <td>
+                    <img src="~/Images/toolbar/print.png" width="32" height="32" alt="Печать" onclick="PrintWindow('table-energy-avg-day');" />
+                    @{ Html.RenderAction("ViewFormEnergyAVGDay", "EnergyDay", new { form = (Form)item });}
+                </td>
+            </tr>
+        }
+        if (item.name == TREnergy.Report.EnergyGranulDay.ToString())
+        {
+            <tr>
+                <td>
+                    <img src="~/Images/toolbar/print.png" width="32" height="32" alt="Печать" onclick="PrintWindow('table-energy-granul-day');" />
+                    @{ Html.RenderAction("ViewFormEnergyGranulDay", "EnergyDay", new { form = (Form)item });}
+                </td>
+            </tr>
+        }
     }
-}
 </table>
+<script>
+    function PrintWindow(id) {
+        var myWindow = window.open("", "_blank", "menubar=yes, toolbar=no, resizable=yes, top=100, left=200, width=1200, height=500");
+        myWindow.document.write("<style> table, td, th { border: 1px solid #515151; border-collapse: collapse; } td, th { text-align: center; padding: 3px; } </style>");
+        var elem = $('table#' + id).wrap('<div/>').parent().html()
+        myWindow.document.write(elem);
+
+    }</script>
+@*<style>
+        table, td, th {
+            border: 1px solid #515151;
+            border-collapse: collapse;
+        }
+
+        td, th {
+            text-align: center;
+            padding: 3px;
+        }
+    </style>*@

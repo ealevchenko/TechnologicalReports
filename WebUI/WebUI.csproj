@@ -229,6 +229,7 @@
     <Content Include="Images\layout-report\sd1.jpg" />
     <Content Include="Images\layout-report\work.jpg" />
     <Content Include="Images\layout-report\work1.jpg" />
+    <Content Include="Images\toolbar\print.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\TehRep.pubxml" />
