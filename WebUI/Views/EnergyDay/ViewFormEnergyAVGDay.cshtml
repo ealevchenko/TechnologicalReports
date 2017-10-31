@@ -31,10 +31,11 @@
         }
         @foreach (Group groupitem in @Model.Groups.OrderBy(g => g.position))
         {
-            <tr><th colspan='@count' class="group">@groupitem.name.ToUpper()</th></tr>
+            if (groupitem.visible) {<tr><th colspan='@count' class="group">@groupitem.name.ToUpper()</th></tr>}
             foreach (TReport.TRForms.Type typeitem in groupitem.Types.OrderBy(t => t.position))
             {
-                <tr><th colspan='@count' class="type">@typeitem.name.ToUpper()</th></tr>
+                if (typeitem.visible)
+                {<tr><th colspan='@count' class="type">@typeitem.name.ToUpper()</th></tr>}
                 foreach (Item ei in typeitem.Items.OrderBy(i => i.position))
                 {
                     <tr>

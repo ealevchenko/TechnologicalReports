@@ -60,6 +60,14 @@
             background: rgba(184,243,85,0.3);
         }
 
+    .table_blur th.group {
+                background:#8ae;
+     }
+    .table_blur th.type {
+                background:#becff2;
+                color:#666
+     }
+
     /*.table_blur tbody:hover td {
         color: transparent;
         text-shadow: 0 0 3px #a09f9d;
